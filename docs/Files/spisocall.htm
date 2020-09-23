@@ -1,0 +1,1305 @@
+<html>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+// Бегущая строка
+
+var scrollCounter = 0;
+var scrollText = "Кафедра ИВТ и ПМ";
+var scrollDelay = 50;
+
+var i = 0;
+while (i ++ < 140)
+scrollText = " " + scrollText;
+
+function Scroller()
+{
+window.status = scrollText.substring(scrollCounter++,
+scrollText.length);
+if (scrollCounter == scrollText.length)
+scrollCounter = 0;
+setTimeout("Scroller()", scrollDelay);
+}
+
+Scroller();
+
+// Плавная смена цвета
+
+document.onmouseover = domouseover;
+document.onmouseout = domouseout;
+
+function domouseover() {
+  if(document.all){
+  srcElement = window.event.srcElement;
+  if (srcElement.className.indexOf("oform") > -1) {
+        var linkName = srcElement.name;
+      fadein(linkName);
+      }
+      }
+}
+
+function domouseout() {
+  if (document.all){
+  srcElement = window.event.srcElement;
+  if (srcElement.className.indexOf("oform") > -1) {
+        var linkName = srcElement.name;
+      fadeout(linkName);
+      }
+      }
+}
+
+function makearray(n) {
+    this.length = n;
+    for(var i = 1; i <= n; i++)
+        this[i] = 0;
+    return this;
+}
+
+hexa = new makearray(16);
+for(var i = 0; i < 10; i++)
+    hexa[i] = i;
+hexa[10]="a"; hexa[11]="b"; hexa[12]="c";
+hexa[13]="d"; hexa[14]="e"; hexa[15]="f";
+
+function hex(i) {
+    if (i < 0)
+        return "00";
+    else if (i > 255)
+        return "ff";
+    else
+       return "" + hexa[Math.floor(i/16)] + hexa[i%16];}
+
+function setbgColor(r, g, b, element) {
+      var hr = hex(r); var hg = hex(g); var hb = hex(b);
+      element.style.color = "#"+hr+hg+hb;
+}
+
+function fade(sr, sg, sb, er, eg, eb, step, direction, element){
+    for(var i = 0; i <= step; i++) {
+setTimeout("setbgColor(Math.floor(" +sr+ " *(( " +step+ " - " +i+ " )/ " +step+ " ) + " +er+ " * (" +i+ "/" +step+ ")),Math.floor(" +sg+ " * (( " +step+ " - " +i+ " )/ " +step+ " ) + " +eg+ " * (" +i+ "/" +step+ ")),Math.floor(" +sb+ " * ((" +step+ "-" +i+ ")/" +step+ ") + " +eb+ " * (" +i+ "/" +step+ ")),"+element+");",i*step);
+    }
+}
+
+function fadeout(element) {
+    fade(246,94,246, 0,0,0, 30, 1, element);
+}
+function fadein(element) {
+    fade(0,0,0, 246,94,246, 20, 1, element);
+}
+
+</SCRIPT>
+
+<head>
+<TITLE>Номера задач</TITLE>
+<meta http-equiv = "content-type" content = "text/html; charset = UTF-8">
+<link rel = "stylesheet" type = "text/css" href = "style.css">
+</head>
+
+<BODY BACKGROUND="fon.jpg">
+
+<table noborder align="center" valign="top" width=100%>
+
+<tr>
+
+<td  align="center">
+ <font size="+3">
+  <a href="oglav.htm" class="oform" name="s1">Оглавление</a>
+ </font>
+</td>
+
+<td align="center">
+ <font size="+3">
+  <a href="spisoc.htm" class="oform" name="s2">Номера задач</a>
+ </font>
+</td>
+
+<td align="center">
+ <font size="+3">
+  <a href="info.htm" class="oform" name="s3">Информация</a>
+ </font>
+</td>
+
+</tr>
+
+</table>
+
+<hr color=rgb(246,94,246) size="3">
+
+<div class="table-responsive">
+<table border="1" cellspacing="1" align = "center" class="table table-bordered table-striped table-hover" width="90%">
+<!-- <table border="1" cellspacing="1" align = "center" class="styletable" width="90%"> -->
+ 
+ <tr>
+  <td align="center" class="bignum"  width="15%">Тема</td>
+  <td align="center" class="bignum"  width="2%">№</td>
+  <td align="center" colspan="16" class="bignum">№ Варианта</td>
+ </tr>
+
+<!-- номера вариантов -->
+<tr id="variants">
+ <td colspan="2">&nbsp;</td>
+ <td align="center" width="7%">1</td>
+ <td align="center" width="5%">2</td>
+ <td align="center" width="4%">3</td>
+ <td align="center" width="4%">4</td>
+ <td align="center" width="4%">5</td>
+ <td align="center" width="4%">6</td>
+ <td align="center" width="4%">7</td>
+ <td align="center" width="4%">8</td>
+ <td align="center" width="4%">9</td>
+ <td align="center" width="4%">10</td>
+ <td align="center" width="4%">11</td>
+ <td align="center" width="4%">12</td>
+ <td align="center" width="4%">13</td>
+ <td align="center" width="4%">14</td>
+ <td align="center" width="4%">15</td>
+ <td align="center" width="4%">16</td>
+</tr>
+
+<!-- структура основной таблицы:
+        заголовок
+        [1]     - порядковый номер задачи (1..55) 
+        [2..17] - номер задачи + ссылка "silver"-->
+<tbody>
+<tr>
+<td align="center" rowspan="3">Арифметика<br> действительных<br> чисел<!--<br> Вычисления<br> по формулам--></td>
+<td align="center" class="styleit">1</td>
+<td align="center"><a class="taskNum" href="../Glava01/index01.htm#z1">1</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava01/index01.htm#z2">2</A></td>
+<td align="center"><a class="taskNum" href="../Glava01/index01.htm#z3">3</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava01/index01.htm#z4">4</A></td>
+<td align="center"><a class="taskNum" href="../Glava01/index01.htm#z5">5</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava01/index01.htm#z6">6</A></td>
+<td align="center"><a class="taskNum" href="../Glava01/index01.htm#z7">7</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava01/index01.htm#z8">8</A></td>
+<td align="center"><a class="taskNum" href="../Glava01/index01.htm#z9">9</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava01/index01.htm#z10">10</A></td>
+<td align="center"><a class="taskNum" href="../Glava01/index01.htm#z11">11a</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava01/index01.htm#z12">12</A></td>
+<td align="center"><a class="taskNum" href="../Glava01/index01.htm#z13">13</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava01/index01.htm#z14">14</A></td>
+<td align="center"><a class="taskNum" href="../Glava01/index01.htm#z15">15</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava01/index01.htm#z16">16</A></td>
+</td>
+
+<tr>
+<td align="center" class="styleit">2</td>
+<td align="center"><a class="taskNum" href="../Glava01/index01.htm#z11">11a</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava01/index01.htm#z11">11б</A></td>
+<td align="center"><a class="taskNum" href="../Glava01/index01.htm#z11">11в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava01/index01.htm#z11">11г</A></td>
+<td align="center"><a class="taskNum" href="../Glava01/index01.htm#z11">11д</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava01/index01.htm#z11">11е</A></td>
+<td align="center"><a class="taskNum" href="../Glava01/index01.htm#z11">11ж</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava01/index01.htm#z11">11а</A></td>
+<td align="center"><a class="taskNum" href="../Glava01/index01.htm#z11">11б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava01/index01.htm#z11">11в</A></td>
+<td align="center"><a class="taskNum" href="../Glava01/index01.htm#z11">11г</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava01/index01.htm#z11">11д</A></td>
+<td align="center"><a class="taskNum" href="../Glava01/index01.htm#z11">11е</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava01/index01.htm#z11">11ж</A></td>
+<td align="center"><a class="taskNum" href="../Glava01/index01.htm#z11">11е</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava01/index01.htm#z11">11ж</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">3</td>
+<td align="center"><a class="taskNum" href="../Glava01/index01.htm#z18">18</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava01/index01.htm#z19">19</A></td>
+<td align="center"><a class="taskNum" href="../Glava01/index01.htm#z20">20</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava01/index01.htm#z22">22</A></td>
+<td align="center"><a class="taskNum" href="../Glava01/index01.htm#z23">23</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava01/index01.htm#z23">23</A></td>
+<td align="center"><a class="taskNum" href="../Glava01/index01.htm#z23">23</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava01/index01.htm#z23">23</A></td>
+<td align="center"><a class="taskNum" href="../Glava01/index01.htm#z24">24</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava01/index01.htm#z25">25</A></td>
+<td align="center"><a class="taskNum" href="../Glava01/index01.htm#z26">26</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava01/index01.htm#z27">27</A></td>
+<td align="center"><a class="taskNum" href="../Glava01/index01.htm#z28">28</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava01/index01.htm#z29">29</A></td>
+<td align="center"><a class="taskNum" href="../Glava01/index01.htm#z30">30</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava01/index01.htm#z21a">31a</A></td>
+</tr>
+</tbody>
+
+</tbody>
+<tr>
+<td align="center" rowspan="4">Разветвления</td>
+<td align="center" class="styleit">4</td>
+<td align="center"><a class="taskNum" href="../Glava02/index02.htm#z44">44</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava02/index02.htm#z43">43</A></td>
+<td align="center"><a class="taskNum" href="../Glava02/index02.htm#z42">42</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava02/index02.htm#z41">41</A></td>
+<td align="center"><a class="taskNum" href="../Glava02/index02.htm#z40">40</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava02/index02.htm#z39">39</A></td>
+<td align="center"><a class="taskNum" href="../Glava02/index02.htm#z38">38</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava02/index02.htm#z37">37</A></td>
+<td align="center"><a class="taskNum" href="../Glava02/index02.htm#z36">36</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava02/index02.htm#z35">35б</A></td>
+<td align="center"><a class="taskNum" href="../Glava02/index02.htm#z35">35а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava02/index02.htm#z34">34б</A></td>
+<td align="center"><a class="taskNum" href="../Glava02/index02.htm#z34">34а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava02/index02.htm#z33">33в</A></td>
+<td align="center"><a class="taskNum" href="../Glava02/index02.htm#z33">33б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava02/index02.htm#z33">33а</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">5</td>
+<td align="center"><a class="taskNum" href="../Glava02/index02.htm#z53">53</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava02/index02.htm#z52">52</A></td>
+<td align="center"><a class="taskNum" href="../Glava02/index02.htm#z49">49</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava02/index02.htm#z57">57г</A></td>
+<td align="center"><a class="taskNum" href="../Glava02/index02.htm#z57">57в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava02/index02.htm#z57">57б</A></td>
+<td align="center"><a class="taskNum" href="../Glava02/index02.htm#z57">57а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava02/index02.htm#z56">56</A></td>
+<td align="center"><a class="taskNum" href="../Glava02/index02.htm#z55">55</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava02/index02.htm#z54">54</A></td>
+<td align="center"><a class="taskNum" href="../Glava02/index02.htm#z51">51</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava02/index02.htm#z50">50</A></td>
+<td align="center"><a class="taskNum" href="../Glava02/index02.htm#z40">40</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava02/index02.htm#z47">47</A></td>
+<td align="center"><a class="taskNum" href="../Glava02/index02.htm#z46">46</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava02/index02.htm#z45">45</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">6</td>
+<td align="center"><a class="taskNum" href="../Glava02/index02.htm#z58">58a</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava02/index02.htm#z58">58б</A></td>
+<td align="center"><a class="taskNum" href="../Glava02/index02.htm#z58">58в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava02/index02.htm#z58">58г</A></td>
+<td align="center"><a class="taskNum" href="../Glava02/index02.htm#z59">59a</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava02/index02.htm#z59">59б</A></td>
+<td align="center"><a class="taskNum" href="../Glava02/index02.htm#z59">59в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava02/index02.htm#z59">59г</A></td>
+<td align="center"><a class="taskNum" href="../Glava02/index02.htm#z58">58д</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava02/index02.htm#z59">59к</A></td>
+<td align="center"><a class="taskNum" href="../Glava02/index02.htm#z60">60а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava02/index02.htm#z60">60б</A></td>
+<td align="center"><a class="taskNum" href="../Glava02/index02.htm#z60">60в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava02/index02.htm#z60">60г</A></td>
+<td align="center"><a class="taskNum" href="../Glava02/index02.htm#z60">60д</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava02/index02.htm#z59">59ж</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">7</td>
+<td align="center"><a class="taskNum" href="../Glava02/index02.htm#z45">45</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava02/index02.htm#z46">46</A></td>
+<td align="center"><a class="taskNum" href="../Glava02/index02.htm#z47">47</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava02/index02.htm#z48">48</A></td>
+<td align="center"><a class="taskNum" href="../Glava02/index02.htm#z50">50</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava02/index02.htm#z51">51</A></td>
+<td align="center"><a class="taskNum" href="../Glava02/index02.htm#z54">54</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava02/index02.htm#z55">55</A></td>
+<td align="center"><a class="taskNum" href="../Glava02/index02.htm#z56">56</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava02/index02.htm#z57">57а</A></td>
+<td align="center"><a class="taskNum" href="../Glava02/index02.htm#z57">57б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava02/index02.htm#z57">57в</A></td>
+<td align="center"><a class="taskNum" href="../Glava02/index02.htm#z57">57г</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava02/index02.htm#z49">49</A></td>
+<td align="center"><a class="taskNum" href="../Glava02/index02.htm#z52">52</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava02/index02.htm#z53">53</A></td>
+</tr>
+</tbody>
+
+</tbody>
+<tr>
+<td align="center" rowspan="3">Простейшая<br> целочисл.<br> арифметика</td>
+<td align="center" class="styleit">8</td>
+<td align="center"><a class="taskNum" href="../Glava03/index03.htm#z66">66</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava03/index03.htm#z64">64</A></td>
+<td align="center"><a class="taskNum" href="../Glava03/index03.htm#z63">63</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava03/index03.htm#z62">62</A></td>
+<td align="center"><a class="taskNum" href="../Glava03/index03.htm#z61">61</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava03/index03.htm#z76">76в</A></td>
+<td align="center"><a class="taskNum" href="../Glava03/index03.htm#z76">76б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava03/index03.htm#z76">76а</A></td>
+<td align="center"><a class="taskNum" href="../Glava03/index03.htm#z74">74</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava03/index03.htm#z73">73</A></td>
+<td align="center"><a class="taskNum" href="../Glava03/index03.htm#z69">69</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava03/index03.htm#z66">66</A></td>
+<td align="center"><a class="taskNum" href="../Glava03/index03.htm#z64">64</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava03/index03.htm#z63">63</A></td>
+<td align="center"><a class="taskNum" href="../Glava03/index03.htm#z62">62</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava03/index03.htm#z61">61</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">9</td>
+<td align="center"><a class="taskNum" href="../Glava03/index03.htm#z65">65</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava03/index03.htm#z76">76е</A></td>
+<td align="center"><a class="taskNum" href="../Glava03/index03.htm#z76">76д</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava03/index03.htm#z76">76г</A></td>
+<td align="center"><a class="taskNum" href="../Glava03/index03.htm#z67">67а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava03/index03.htm#z67">67в</A></td>
+<td align="center"><a class="taskNum" href="../Glava03/index03.htm#z67">67б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava03/index03.htm#z67">67а</A></td>
+<td align="center"><a class="taskNum" href="../Glava03/index03.htm#z67">67д</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava03/index03.htm#z67">67б</A></td>
+<td align="center"><a class="taskNum" href="../Glava03/index03.htm#z67">67г</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava03/index03.htm#z76">76г</A></td>
+<td align="center"><a class="taskNum" href="../Glava03/index03.htm#z76">76д</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava03/index03.htm#z76">76е</A></td>
+<td align="center"><a class="taskNum" href="../Glava03/index03.htm#z67">67д</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava03/index03.htm#z67">67г</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">10</td>
+<td align="center"><a class="taskNum" href="../Glava03/index03.htm#z68">68а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava03/index03.htm#z68">68б</A></td>
+<td align="center"><a class="taskNum" href="../Glava03/index03.htm#z68">68в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava03/index03.htm#z68">68а</A></td>
+<td align="center"><a class="taskNum" href="../Glava03/index03.htm#z68">68б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava03/index03.htm#z68">68в</A></td>
+<td align="center"><a class="taskNum" href="../Glava03/index03.htm#z68">68а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava03/index03.htm#z68">68б</A></td>
+<td align="center"><a class="taskNum" href="../Glava03/index03.htm#z68">68в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava03/index03.htm#z68">68а</A></td>
+<td align="center"><a class="taskNum" href="../Glava03/index03.htm#z68">68б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava03/index03.htm#z68">68в</A></td>
+<td align="center"><a class="taskNum" href="../Glava03/index03.htm#z68">68а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava03/index03.htm#z68">68б</A></td>
+<td align="center"><a class="taskNum" href="../Glava03/index03.htm#z68">68в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava03/index03.htm#z69">69</A></td>
+</tr>
+</tbody>
+
+</tbody>
+<tr>
+<td align="center" rowspan="4">Простейшие<br> циклы</td>
+<td align="center" class="styleit">11</td>
+<td align="center"><a class="taskNum" href="../Glava04/index04.htm#z77">77а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava04/index04.htm#z77">77б</A></td>
+<td align="center"><a class="taskNum" href="../Glava04/index04.htm#z77">77в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava04/index04.htm#z77">77г</A></td>
+<td align="center"><a class="taskNum" href="../Glava04/index04.htm#z77">77д</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava04/index04.htm#z77">77е</A></td>
+<td align="center"><a class="taskNum" href="../Glava04/index04.htm#z77">77ж</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava04/index04.htm#z78">78а</A></td>
+<td align="center"><a class="taskNum" href="../Glava04/index04.htm#z78">78б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava04/index04.htm#z78">78в</A></td>
+<td align="center"><a class="taskNum" href="../Glava04/index04.htm#z78">78г</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava04/index04.htm#z78">78д</A></td>
+<td align="center"><a class="taskNum" href="../Glava04/index04.htm#z79">79</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava04/index04.htm#z80">80</A></td>
+<td align="center"><a class="taskNum" href="../Glava04/index04.htm#z81">81</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava04/index04.htm#z82">82</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">12</td>
+<td align="center"><a class="taskNum" href="../Glava04/index04.htm#z84">84а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava04/index04.htm#z84">84б</A></td>
+<td align="center"><a class="taskNum" href="../Glava04/index04.htm#z84">84в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava04/index04.htm#z85">85</A></td>
+<td align="center"><a class="taskNum" href="../Glava04/index04.htm#z86">86а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava04/index04.htm#z86">86б</A></td>
+<td align="center"><a class="taskNum" href="../Glava04/index04.htm#z86">86в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava04/index04.htm#z86">86г</A></td>
+<td align="center"><a class="taskNum" href="../Glava04/index04.htm#z87">87</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava04/index04.htm#z88">88а</A></td>
+<td align="center"><a class="taskNum" href="../Glava04/index04.htm#z89">89а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava04/index04.htm#z89">89б</A></td>
+<td align="center"><a class="taskNum" href="../Glava04/index04.htm#z91">91</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava04/index04.htm#z113">113а</A></td>
+<td align="center"><a class="taskNum" href="../Glava04/index04.htm#z113">113б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava04/index04.htm#z114">114а</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">13</td>
+<td align="center"><a class="taskNum" href="../Glava04/index04.htm#z114">114б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava04/index04.htm#z114">114в</A></td>
+<td align="center"><a class="taskNum" href="../Glava04/index04.htm#z114">114г</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava04/index04.htm#z114">114д</A></td>
+<td align="center"><a class="taskNum" href="../Glava04/index04.htm#z114">114е</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava04/index04.htm#z114">114ж</A></td>
+<td align="center"><a class="taskNum" href="../Glava04/index04.htm#z114">114з</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava04/index04.htm#z115">115а</A></td>
+<td align="center"><a class="taskNum" href="../Glava04/index04.htm#z115">115б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava04/index04.htm#z115">115в</A></td>
+<td align="center"><a class="taskNum" href="../Glava04/index04.htm#z115">115г</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava04/index04.htm#z115">115д</A></td>
+<td align="center"><a class="taskNum" href="../Glava04/index04.htm#z115">115е</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava04/index04.htm#z115">115ж</A></td>
+<td align="center"><a class="taskNum" href="../Glava04/index04.htm#z116">116а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava04/index04.htm#z116">116б</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">14</td>
+<td align="center"><a class="taskNum" href="../Glava04/index04.htm#z116">116в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava04/index04.htm#z116">116г</A></td>
+<td align="center"><a class="taskNum" href="../Glava04/index04.htm#z116">116д</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava04/index04.htm#z116">116е</A></td>
+<td align="center"><a class="taskNum" href="../Glava04/index04.htm#z117">117а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava04/index04.htm#z117">117б</A></td>
+<td align="center"><a class="taskNum" href="../Glava04/index04.htm#z118">118а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava04/index04.htm#z118">118б</A></td>
+<td align="center"><a class="taskNum" href="../Glava04/index04.htm#z118">118в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava04/index04.htm#z118">118г</A></td>
+<td align="center"><a class="taskNum" href="../Glava04/index04.htm#z119">119а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava04/index04.htm#z119">119б</A></td>
+<td align="center"><a class="taskNum" href="../Glava04/index04.htm#z119">119в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava04/index04.htm#z119">119г</A></td>
+<td align="center"><a class="taskNum" href="../Glava04/index04.htm#z119">119д</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava04/index04.htm#z119">119е</A></td>
+</tr>
+</tr>
+</tbody>
+
+</tbody>
+<tr>
+<td align="center" rowspan="4">Массивы.<br> Простейшие массивы</td>
+<td align="center" class="styleit">15</td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z136">136н</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z136">136д</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z136">136о</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z136">136н</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z136">136м</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z136">136л</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z136">136к</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z136">136и</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z136">136з</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z136">136ж</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z136">136е</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z136">136д</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z136">136г</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z136">136в</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z136">136б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z136">136а</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">16</td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z137">137а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z137">137б</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z137">137в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z137">137г</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z137">137д</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z137">137е</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z138">138</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z139">139а</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z139">139б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z139">139в</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z139">139г</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z139">139д</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z139">139е</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z139">139ж</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z139">139з</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z139">139и</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">17</td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z140">140</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z141">141</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z142">142</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z143">143</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z144">144а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z144">144б</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z145">145а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z145">145б</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z145">145в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z146">146</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z147">147</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z148">148</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z151">151</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z152">152</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z154">154</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z155">155</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">18</td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z156">156а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z156">156б</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z157">157</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z158">158</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z159">159</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z160">160</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z162">162</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z164">164а</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z164">164</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z164">164б</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z166">166</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z167">167а</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z167">167б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z169">169</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z156">156а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z156">156б</A></td>
+</tr>
+</tbody>
+
+</tbody>
+<tr>
+<td align="center" rowspan="4">Массивы.<br> Циклы и разветвления</td>
+<td align="center" class="styleit">19</td>
+<td align="center"><a class="taskNum" href="../Glava07/index07.htm#z178">178а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava07/index07.htm#z178">178б</A></td>
+<td align="center"><a class="taskNum" href="../Glava07/index07.htm#z178">178в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava07/index07.htm#z178">178г</A></td>
+<td align="center"><a class="taskNum" href="../Glava07/index07.htm#z178">178д</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava07/index07.htm#z178">178е</A></td>
+<td align="center"><a class="taskNum" href="../Glava07/index07.htm#z179">179а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava07/index07.htm#z179">179б</A></td>
+<td align="center"><a class="taskNum" href="../Glava07/index07.htm#z180">180</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava07/index07.htm#z181">181а</A></td>
+<td align="center"><a class="taskNum" href="../Glava07/index07.htm#z181">181б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava07/index07.htm#z181">181в</A></td>
+<td align="center"><a class="taskNum" href="../Glava07/index07.htm#z182">182</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava07/index07.htm#z183">183</A></td>
+<td align="center"><a class="taskNum" href="../Glava07/index07.htm#z184">184</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava07/index07.htm#z185">185</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">20</td>
+<td align="center"><a class="taskNum" href="../Glava07/index07.htm#z202">202а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava07/index07.htm#z202">202б</A></td>
+<td align="center"><a class="taskNum" href="../Glava07/index07.htm#z200">200</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava07/index07.htm#z199">199</A></td>
+<td align="center"><a class="taskNum" href="../Glava07/index07.htm#z198">198</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava07/index07.htm#z197">197</A></td>
+<td align="center"><a class="taskNum" href="../Glava07/index07.htm#z196">196</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava07/index07.htm#z195">195</A></td>
+<td align="center"><a class="taskNum" href="../Glava07/index07.htm#z194">194</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava07/index07.htm#z192">192</A></td>
+<td align="center"><a class="taskNum" href="../Glava07/index07.htm#z191">191</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava07/index07.htm#z190">190</A></td>
+<td align="center"><a class="taskNum" href="../Glava07/index07.htm#z189">189</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava07/index07.htm#z188">188</A></td>
+<td align="center"><a class="taskNum" href="../Glava07/index07.htm#z187">187</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava07/index07.htm#z186">186</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">21</td>
+<td align="center"><a class="taskNum" href="../Glava07/index07.htm#z201">201а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava07/index07.htm#z201">201б</A></td>
+<td align="center"><a class="taskNum" href="../Glava07/index07.htm#z201">201в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava07/index07.htm#z201">201г</A></td>
+<td align="center"><a class="taskNum" href="../Glava07/index07.htm#z201">201д</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava07/index07.htm#z201">201е</A></td>
+<td align="center"><a class="taskNum" href="../Glava07/index07.htm#z201">201ж</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava07/index07.htm#z201">201з</A></td>
+<td align="center"><a class="taskNum" href="../Glava07/index07.htm#z201">201з</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava07/index07.htm#z201">201ж</A></td>
+<td align="center"><a class="taskNum" href="../Glava07/index07.htm#z201">201е</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava07/index07.htm#z201">201д</A></td>
+<td align="center"><a class="taskNum" href="../Glava07/index07.htm#z201">201г</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava07/index07.htm#z201">201в</A></td>
+<td align="center"><a class="taskNum" href="../Glava07/index07.htm#z201">201б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava07/index07.htm#z201">201а</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">22</td>
+<td align="center"><a class="taskNum" href="../Glava07/index07.htm#z246">246а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava07/index07.htm#z246">246б</A></td>
+<td align="center"><a class="taskNum" href="../Glava07/index07.htm#z246">246в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava07/index07.htm#z245">245</A></td>
+<td align="center"><a class="taskNum" href="../Glava07/index07.htm#z244">244а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava07/index07.htm#z244">244б</A></td>
+<td align="center"><a class="taskNum" href="../Glava07/index07.htm#z243">243а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava07/index07.htm#z230">230</A></td>
+<td align="center"><a class="taskNum" href="../Glava07/index07.htm#z229">229</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava07/index07.htm#z228">228</A></td>
+<td align="center"><a class="taskNum" href="../Glava07/index07.htm#z223">223г</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava07/index07.htm#z223">223а</A></td>
+<td align="center"><a class="taskNum" href="../Glava07/index07.htm#z223">223б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava07/index07.htm#z223">223в</A></td>
+<td align="center"><a class="taskNum" href="../Glava07/index07.htm#z223">223и</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava07/index07.htm#z223">223ж</A></td>
+</tr>
+</tbody>
+
+</tbody>
+<tr>
+<td align="center" rowspan="5">Вложенные циклы<br> и итерации</td>
+<td align="center" class="styleit">23</td>
+<td align="center"><a class="taskNum" href="../Glava10/index10.htm#z320">320</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava10/index10.htm#z334">334а</A></td>
+<td align="center"><a class="taskNum" href="../Glava10/index10.htm#z334">334б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava10/index10.htm#z334">334в</A></td>
+<td align="center"><a class="taskNum" href="../Glava10/index10.htm#z334">334г</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava10/index10.htm#z335">335а</A></td>
+<td align="center"><a class="taskNum" href="../Glava10/index10.htm#z335">335б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava10/index10.htm#z335">335в</A></td>
+<td align="center"><a class="taskNum" href="../Glava10/index10.htm#z334">334г</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava10/index10.htm#z336">336а</A></td>
+<td align="center"><a class="taskNum" href="../Glava10/index10.htm#z336">336б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava10/index10.htm#z336">336в</A></td>
+<td align="center"><a class="taskNum" href="../Glava10/index10.htm#z336">336г</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava10/index10.htm#z320">320</A></td>
+<td align="center"><a class="taskNum" href="../Glava10/index10.htm#z334">334а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava10/index10.htm#z334">334б</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">24</td>
+<td align="center"><a class="taskNum" href="../Glava10/index10.htm#z338">338а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava10/index10.htm#z338">338б</A></td>
+<td align="center"><a class="taskNum" href="../Glava10/index10.htm#z338">338в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava10/index10.htm#z338">338г</A></td>
+<td align="center"><a class="taskNum" href="../Glava10/index10.htm#z338">338д</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava10/index10.htm#z338">338е</A></td>
+<td align="center"><a class="taskNum" href="../Glava10/index10.htm#z339">339а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava10/index10.htm#z340">340</A></td>
+<td align="center"><a class="taskNum" href="../Glava10/index10.htm#z341">341</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava10/index10.htm#z342">342</A></td>
+<td align="center"><a class="taskNum" href="../Glava10/index10.htm#z343">343</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava10/index10.htm#z338">338а</A></td>
+<td align="center"><a class="taskNum" href="../Glava10/index10.htm#z338">338б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava10/index10.htm#z338">338в</A></td>
+<td align="center"><a class="taskNum" href="../Glava10/index10.htm#z338">338г</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava10/index10.htm#z338">338д</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">25</td>
+<td align="center"><a class="taskNum" href="../Glava11/index11.htm#z367">367</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava11/index11.htm#z368">368</A></td>
+<td align="center"><a class="taskNum" href="../Glava11/index11.htm#z369">369</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava11/index11.htm#z370">370а</A></td>
+<td align="center"><a class="taskNum" href="../Glava11/index11.htm#z370">370б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava11/index11.htm#z371">371</A></td>
+<td align="center"><a class="taskNum" href="../Glava11/index11.htm#z373">373а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava11/index11.htm#z373">373б</A></td>
+<td align="center"><a class="taskNum" href="../Glava11/index11.htm#z374">374а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava11/index11.htm#z374">374б</A></td>
+<td align="center"><a class="taskNum" href="../Glava11/index11.htm#z374">374в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava11/index11.htm#z375">375</A></td>
+<td align="center"><a class="taskNum" href="../Glava11/index11.htm#z376">376а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava11/index11.htm#z376">376б</A></td>
+<td align="center"><a class="taskNum" href="../Glava11/index11.htm#z377">377</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava11/index11.htm#z378">378б</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">26</td>
+<td align="center"><a class="taskNum" href="../Glava24/index24.htm#z755">755а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava24/index24.htm#z755">755б</A></td>
+<td align="center"><a class="taskNum" href="../Glava24/index24.htm#z755">755в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava24/index24.htm#z755">755г</A></td>
+<td align="center"><a class="taskNum" href="../Glava24/index24.htm#z755">755д</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava24/index24.htm#z755">755е</A></td>
+<td align="center"><a class="taskNum" href="../Glava24/index24.htm#z755">755ж</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava24/index24.htm#z755">755з</A></td>
+<td align="center"><a class="taskNum" href="../Glava24/index24.htm#z758">758а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava24/index24.htm#z758">758б</A></td>
+<td align="center"><a class="taskNum" href="../Glava24/index24.htm#z758">758в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava24/index24.htm#z758">758г</A></td>
+<td align="center"><a class="taskNum" href="../Glava24/index24.htm#z758">758д</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava24/index24.htm#z758">758е</A></td>
+<td align="center"><a class="taskNum" href="../Glava24/index24.htm#z758">758ж</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava24/index24.htm#z758">758з</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">27</td>
+<td align="center"><a class="taskNum" href="../Glava24/index24.htm#z760">760а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava24/index24.htm#z760">760б</A></td>
+<td align="center"><a class="taskNum" href="../Glava24/index24.htm#z760">760в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava24/index24.htm#z760">760г</A></td>
+<td align="center"><a class="taskNum" href="../Glava24/index24.htm#z762">762а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava24/index24.htm#z762">762б</A></td>
+<td align="center"><a class="taskNum" href="../Glava24/index24.htm#z762">762в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava24/index24.htm#z762">762г</A></td>
+<td align="center"><a class="taskNum" href="../Glava24/index24.htm#z763">763а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava24/index24.htm#z763">763б</A></td>
+<td align="center"><a class="taskNum" href="../Glava24/index24.htm#z763">763в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava24/index24.htm#z763">763г</A></td>
+<td align="center"><a class="taskNum" href="../Glava24/index24.htm#z765">765</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava24/index24.htm#z760">760а</A></td>
+<td align="center"><a class="taskNum" href="../Glava24/index24.htm#z760">760б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava24/index24.htm#z760">760в</A></td>
+</tr>
+</tr>
+</tbody>
+
+</tbody>
+<tr>
+<td align="center" rowspan="4">Обработка<br> матриц</td>
+<td align="center" class="styleit">28</td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z673">673</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z674">674</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z675">675</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z676">676а</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z676">676б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z677">677а</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z677">677б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z677">677в</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z677">677г</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z678">678</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z679">679а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z679">679б</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z680">680а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z680">680б</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z681">681</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z684">684</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">29</td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z685">685</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z686">686</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z687">687</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z688">688</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z689">689</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z690">690</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z691">691а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z691">691б</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z691">691в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z691">691г</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z692">692а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z692">692б</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z692">692в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z692">692г</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z692">692д</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z692">692е</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">30</td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z692">692ж</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z692">692з</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z692">692и</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z692">692к</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z693">693а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z693">693б</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z694">694а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z694">694б</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z694">694в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z694">694г</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z694">694д</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z694">694е</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z694">694ж</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z694">694з</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z694">694и</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z694">694к</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">31</td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z694">694л</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z694">694м</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z694">694н</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z694">694о</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z695">695м</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z694">694л</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z694">694к</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z694">694и</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z694">694з</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z694">694ж</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z694">694е</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z694">694д</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z694">694г</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z694">694в</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z694">694б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z694">694а</A></td>
+</tr>
+</tbody>
+
+</tbody>
+<tr>
+<td align="center" rowspan="5">Графика</td>
+<td align="center" class="styleit">32</td>
+<td align="center"><a class="taskNum" href="../Glava05/index05.htm#z129">129и</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava05/index05.htm#z129">129к</A></td>
+<td align="center"><a class="taskNum" href="../Glava05/index05.htm#z129">129л</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava05/index05.htm#z129">129м</A></td>
+<td align="center"><a class="taskNum" href="../Glava05/index05.htm#z129">129н</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava05/index05.htm#z129">129о</A></td>
+<td align="center"><a class="taskNum" href="../Glava05/index05.htm#z126">126</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava05/index05.htm#z121">121</A></td>
+<td align="center"><a class="taskNum" href="../Glava05/index05.htm#z124">124</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava05/index05.htm#z125">125</A></td>
+<td align="center"><a class="taskNum" href="../Glava05/index05.htm#z129">129а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava05/index05.htm#z129">129б</A></td>
+<td align="center"><a class="taskNum" href="../Glava05/index05.htm#z129">129в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava05/index05.htm#z129">129д</A></td>
+<td align="center"><a class="taskNum" href="../Glava05/index05.htm#z129">129ж</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava05/index05.htm#z129">129з</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">33</td>
+<td align="center"><a class="taskNum" href="../Glava30/index30.htm#z844">844а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava30/index30.htm#z844">844б</A></td>
+<td align="center"><a class="taskNum" href="../Glava30/index30.htm#z844">844в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava30/index30.htm#z844">844г</A></td>
+<td align="center"><a class="taskNum" href="../Glava30/index30.htm#z844">844д</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava30/index30.htm#z844">844е</A></td>
+<td align="center"><a class="taskNum" href="../Glava10/index10.htm#z337">337а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava10/index10.htm#z337">337б</A></td>
+<td align="center"><a class="taskNum" href="../Glava10/index10.htm#z337">337в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava10/index10.htm#z337">337г</A></td>
+<td align="center"><a class="taskNum" href="../Glava10/index10.htm#z337">337д</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava10/index10.htm#z337">337е</A></td>
+<td align="center"><a class="taskNum" href="../Glava10/index10.htm#z337">337ж</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava10/index10.htm#z337">337з</A></td>
+<td align="center"><a class="taskNum" href="../Glava30/index30.htm#z846">846г</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava30/index30.htm#z846">846е</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">34</td>
+<td align="center"><a class="taskNum" href="../Glava30/index30.htm#z865">865</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava30/index30.htm#z866">866а</A></td>
+<td align="center"><a class="taskNum" href="../Glava30/index30.htm#z866">866б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava30/index30.htm#z866">866в</A></td>
+<td align="center"><a class="taskNum" href="../Glava30/index30.htm#z870">870</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava30/index30.htm#z867">867</A></td>
+<td align="center"><a class="taskNum" href="../Glava30/index30.htm#z865">865</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava30/index30.htm#z867">867</A></td>
+<td align="center"><a class="taskNum" href="../Glava30/index30.htm#z866">866а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava30/index30.htm#z866">866б</A></td>
+<td align="center"><a class="taskNum" href="../Glava30/index30.htm#z866">866в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava30/index30.htm#z867">867</A></td>
+<td align="center"><a class="taskNum" href="../Glava30/index30.htm#z870">870</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava30/index30.htm#z867">867</A></td>
+<td align="center"><a class="taskNum" href="../Glava30/index30.htm#z865">865</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava30/index30.htm#z867">867</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">35</td>
+<td align="center"><a class="taskNum" href="../Glava30/index30.htm#z906">906</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava30/index30.htm#z907">907</A></td>
+<td align="center"><a class="taskNum" href="../Glava30/index30.htm#z908">908</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava30/index30.htm#z909">909</A></td>
+<td align="center"><a class="taskNum" href="../Glava30/index30.htm#z909">909</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava30/index30.htm#z908">908</A></td>
+<td align="center"><a class="taskNum" href="../Glava30/index30.htm#z907">907</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava30/index30.htm#z906">906</A></td>
+<td align="center"><a class="taskNum" href="../Glava30/index30.htm#z901">901а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava30/index30.htm#z901">901б</A></td>
+<td align="center"><a class="taskNum" href="../Glava30/index30.htm#z901">901в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava30/index30.htm#z902">902а</A></td>
+<td align="center"><a class="taskNum" href="../Glava30/index30.htm#z902">902б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava30/index30.htm#z903">903</A></td>
+<td align="center"><a class="taskNum" href="../Glava30/index30.htm#z904">904</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava30/index30.htm#z905">905</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">36</td>
+<td align="center"><a class="taskNum" href="../Glava32/index32.htm#z962">962а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava32/index32.htm#z963">963</A></td>
+<td align="center"><a class="taskNum" href="../Glava32/index32.htm#z969">969</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava32/index32.htm#z967">967г</A></td>
+<td align="center"><a class="taskNum" href="../Glava32/index32.htm#z951">951</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava32/index32.htm#z952">952</A></td>
+<td align="center"><a class="taskNum" href="../Glava32/index32.htm#z955">955</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava32/index32.htm#z967">967г</A></td>
+<td align="center"><a class="taskNum" href="../Glava32/index32.htm#z967">967в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava32/index32.htm#z967">967б</A></td>
+<td align="center"><a class="taskNum" href="../Glava32/index32.htm#z967">967а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava32/index32.htm#z955">955</A></td>
+<td align="center"><a class="taskNum" href="../Glava32/index32.htm#z952">952</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava32/index32.htm#z951">951</A></td>
+<td align="center"><a class="taskNum" href="../Glava32/index32.htm#z950">950</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava32/index32.htm#z943">943</A></td>
+</tr>
+</tbody>
+
+</tbody>
+<tr>
+<td align="center" rowspan="7">Использoвание<br> процедур и функций</td>
+<td align="center" class="styleit">37</td>
+<td align="center"><a class="taskNum" href="../Glava12/index12.htm#z424">424</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava12/index12.htm#z425">425</A></td>
+<td align="center"><a class="taskNum" href="../Glava12/index12.htm#z426">426</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava12/index12.htm#z427">427</A></td>
+<td align="center"><a class="taskNum" href="../Glava12/index12.htm#z428">428</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava12/index12.htm#z429">429</A></td>
+<td align="center"><a class="taskNum" href="../Glava12/index12.htm#z430">430</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava12/index12.htm#z431">431</A></td>
+<td align="center"><a class="taskNum" href="../Glava12/index12.htm#z432">432</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava12/index12.htm#z433">433</A></td>
+<td align="center"><a class="taskNum" href="../Glava12/index12.htm#z424">424</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava12/index12.htm#z431">431</A></td>
+<td align="center"><a class="taskNum" href="../Glava12/index12.htm#z430">430</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava12/index12.htm#z429">429</A></td>
+<td align="center"><a class="taskNum" href="../Glava12/index12.htm#z428">428</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava12/index12.htm#z427">427</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">38</td>
+<td align="center"><a class="taskNum" href="../Glava12/index12.htm#z445">445</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava12/index12.htm#z446">446</A></td>
+<td align="center"><a class="taskNum" href="../Glava12/index12.htm#z447">447</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava12/index12.htm#z447">447</A></td>
+<td align="center"><a class="taskNum" href="../Glava12/index12.htm#z446">446</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava12/index12.htm#z445">445</A></td>
+<td align="center"><a class="taskNum" href="../Glava12/index12.htm#z444">444</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava12/index12.htm#z443">443</A></td>
+<td align="center"><a class="taskNum" href="../Glava12/index12.htm#z442">442</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava12/index12.htm#z441">441</A></td>
+<td align="center"><a class="taskNum" href="../Glava12/index12.htm#z440">440в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava12/index12.htm#z440">440б</A></td>
+<td align="center"><a class="taskNum" href="../Glava12/index12.htm#z440">440а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava12/index12.htm#z439">439</A></td>
+<td align="center"><a class="taskNum" href="../Glava12/index12.htm#z435">435</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava12/index12.htm#z434">434</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">39</td>
+<td align="center"><a class="taskNum" href="../Glava12/index12.htm#z455">455</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava12/index12.htm#z456">456</A></td>
+<td align="center"><a class="taskNum" href="../Glava12/index12.htm#z457">457</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava12/index12.htm#z458">458</A></td>
+<td align="center"><a class="taskNum" href="../Glava12/index12.htm#z458">458</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava12/index12.htm#z457">457</A></td>
+<td align="center"><a class="taskNum" href="../Glava12/index12.htm#z456">456</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava12/index12.htm#z455">455</A></td>
+<td align="center"><a class="taskNum" href="../Glava12/index12.htm#z455">455</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava12/index12.htm#z456">456</A></td>
+<td align="center"><a class="taskNum" href="../Glava12/index12.htm#z457">457</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava12/index12.htm#z458">458</A></td>
+<td align="center"><a class="taskNum" href="../Glava12/index12.htm#z458">458</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava12/index12.htm#z457">457</A></td>
+<td align="center"><a class="taskNum" href="../Glava12/index12.htm#z456">456</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava12/index12.htm#z455">455</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">40</td>
+<td align="center"><a class="taskNum" href="../Glava12/index12.htm#z459">459(317)</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z674">674</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z675">675</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z676">676а</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z676">676б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z677">677а</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z677">677б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z677">677в</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z677">677г</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z678">678</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z679">679а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z679">679б</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z680">680а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z680">680б</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z681">681</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z684">684</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">41</td>
+<td align="center"><a class="taskNum" href="../Glava12/index12.htm#z459">459(338а)</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z686">686</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z687">687</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z688">688</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z689">689</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z690">690</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z691">691а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z691">691б</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z691">691в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z691">691г</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z692">692а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z692">692б</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z692">692в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z692">692г</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z692">692д</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z692">692е</A></td>
+
+</tr>
+<tr>
+<td align="center" class="styleit">42</td>
+<td align="center"><a class="taskNum" href="../Glava12/index12.htm#z460">460а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z692">692з</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z692">692и</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z692">692к</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z693">693а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z693">693б</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z694">694а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z694">694б</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z694">694в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z694">694г</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z694">694д</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z694">694е</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z694">694ж</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z694">694з</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z694">694и</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z694">694к</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">43</td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z471">471а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z694">694м</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z694">694н</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z694">694о</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z695">695м</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z694">694л</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z694">694к</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z694">694и</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z694">694з</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z694">694ж</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z694">694е</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z694">694д</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z694">694г</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z694">694в</A></td>
+<td align="center"><a class="taskNum" href="../Glava20/index20.htm#z694">694б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava20/index20.htm#z694">694а</A></td>
+</tr>
+</tbody>
+
+</tbody>
+<tr>
+<td align="center" rowspan="7">Файлы</td>
+<td align="center" class="styleit">44</td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z474">474а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z474">474б</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z474">474в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z474">474г</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z474">474д</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z474">474е</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z474">474ж</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z474">474з</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z474">474и</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z474">474а</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z474">474б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z475">475а</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z474">474б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z474">474в</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z474">474а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z474">474б</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">45</td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z489">489а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z489">489б</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z488">488в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z488">488б</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z488">488а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z487">487</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z486">486</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z485">485</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z484">484</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z481">481</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z482">482</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z480">480в</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z480">480б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z480">480а</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z478">478</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z477">477</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">46</td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z476">476</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z499">499а</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z499">499б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z499">499в</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z498">498а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z498">498б</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z497">497</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z496">496а</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z496">496б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z494">494</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z493">493а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z493">493б</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z493">493в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z492">492</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z491">491</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z490">490</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">47</td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z501">501а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z501">501б</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z506">506а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z506">506б</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z506">506в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z506">506г</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z506">506д</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z506">506е</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z507">507а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z507">507б</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z507">507в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z507">507г</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z507">507д</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z507">507е</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z507">507ж</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z507">507з</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">48</td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z509">509а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z509">509б</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z510">510а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z510">510б</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z510">510в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z511">511а</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z511">511б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z512">512</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z513">513а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z513">513б</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z514">514а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z514">514б</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z515">515</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z517">517а</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z517">517б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z517">517в</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">49</td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z517">517г</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z517">517д</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z517">517е</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z517">517ж</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z515">515</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z513">513а</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z513">513б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z501">501а</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z501">501б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z506">506а</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z506">506б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z506">506в</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z506">506г</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z506">506д</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z506">506е</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z512">512</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">50</td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z519">519а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z519">519б</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z520">520</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z521">521</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z522">522</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z523">523а</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z523">523б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z524">524</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z525">525</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z526">526</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z524">524</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z523">523б</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z523">523а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z522">522</A></td>
+<td align="center"><a class="taskNum" href="../Glava13/index13.htm#z521">521</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava13/index13.htm#z520">520</A></td>
+</tr>
+</tbody>
+
+</tbody>
+<tr>
+<td align="center" rowspan="5">Списки</td>
+<td align="center" class="styleit">51</td>
+<td align="center"><a class="taskNum" href="../Glava14/index14.htm#z531">531</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava14/index14.htm#z532">532</A></td>
+<td align="center"><a class="taskNum" href="../Glava14/index14.htm#z533">533а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava14/index14.htm#z533">533б</A></td>
+<td align="center"><a class="taskNum" href="../Glava14/index14.htm#z533">533в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava14/index14.htm#z531">531</A></td>
+<td align="center"><a class="taskNum" href="../Glava14/index14.htm#z533">533а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava14/index14.htm#z533">533б</A></td>
+<td align="center"><a class="taskNum" href="../Glava14/index14.htm#z533">533в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava14/index14.htm#z532">532</A></td>
+<td align="center"><a class="taskNum" href="../Glava14/index14.htm#z531">531</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava14/index14.htm#z533">533а</A></td>
+<td align="center"><a class="taskNum" href="../Glava14/index14.htm#z533">533б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava14/index14.htm#z533">533в</A></td>
+<td align="center"><a class="taskNum" href="../Glava14/index14.htm#z532">532</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava14/index14.htm#z533">533в</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">52</td>
+<td align="center"><a class="taskNum" href="../Glava14/index14.htm#z534">534а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava14/index14.htm#z534">534б</A></td>
+<td align="center"><a class="taskNum" href="../Glava14/index14.htm#z534">534в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava14/index14.htm#z534">534г</A></td>
+<td align="center"><a class="taskNum" href="../Glava14/index14.htm#z535">535</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava14/index14.htm#z536">536</A></td>
+<td align="center"><a class="taskNum" href="../Glava14/index14.htm#z538">538а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava14/index14.htm#z538">538б</A></td>
+<td align="center"><a class="taskNum" href="../Glava14/index14.htm#z538">538в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava14/index14.htm#z541">541а</A></td>
+<td align="center"><a class="taskNum" href="../Glava14/index14.htm#z542">542</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava14/index14.htm#z543">543</A></td>
+<td align="center"><a class="taskNum" href="../Glava14/index14.htm#z544">544</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava14/index14.htm#z534">534а</A></td>
+<td align="center"><a class="taskNum" href="../Glava14/index14.htm#z534">534б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava14/index14.htm#z534">534в</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">53</td>
+<td align="center"><a class="taskNum" href="../Glava14/index14.htm#z545">545</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava14/index14.htm#z545">545</A></td>
+<td align="center"><a class="taskNum" href="../Glava14/index14.htm#z545">545</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava14/index14.htm#z545">545</A></td>
+<td align="center"><a class="taskNum" href="../Glava14/index14.htm#z545">545</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava14/index14.htm#z545">545</A></td>
+<td align="center"><a class="taskNum" href="../Glava14/index14.htm#z545">545</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava14/index14.htm#z545">545</A></td>
+<td align="center"><a class="taskNum" href="../Glava14/index14.htm#z545">545</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava14/index14.htm#z545">545</A></td>
+<td align="center"><a class="taskNum" href="../Glava14/index14.htm#z545">545</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava14/index14.htm#z545">545</A></td>
+<td align="center"><a class="taskNum" href="../Glava14/index14.htm#z545">545</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava14/index14.htm#z545">545</A></td>
+<td align="center"><a class="taskNum" href="../Glava14/index14.htm#z545">545</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava14/index14.htm#z545">545</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">54</td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z136">136а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z136">136б</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z136">136в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z136">136г</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z136">136д</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z136">136е</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z136">136ж</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z136">136з</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z136">136и</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z136">136к</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z136">136л</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z136">136м</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z136">136н</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z136">136о</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z137">137а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z137">137б</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">55</td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z137">137в</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z137">137г</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z137">137д</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z137">137е</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z138">138</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z139">139а</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z139">139б</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z139">139в</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z139">139г</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z139">139д</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z139">139е</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z139">139ж</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z139">139з</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z139">139и</A></td>
+<td align="center"><a class="taskNum" href="../Glava06/index06.htm#z144">144а</A></td>
+<td align="center" bgcolor="silver"><a class="taskNum" href="../Glava06/index06.htm#z144">144б</A></td>
+</tr>
+</tbody>
+
+</table>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,280 @@
+<html>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+// Бегущая строка
+
+var scrollCounter = 0;
+var scrollText = "Кафедра ИВТ и ПМ";
+var scrollDelay = 50;
+
+var i = 0;
+while (i ++ < 140)
+scrollText = " " + scrollText;
+
+function Scroller()
+{
+window.status = scrollText.substring(scrollCounter++,
+scrollText.length);
+if (scrollCounter == scrollText.length)
+scrollCounter = 0;
+setTimeout("Scroller()", scrollDelay);
+}
+
+Scroller();
+
+// Плавная смена цвета
+
+document.onmouseover = domouseover;
+document.onmouseout = domouseout;
+
+function domouseover() {
+  if(document.all){
+  srcElement = window.event.srcElement;
+  if (srcElement.className.indexOf("oform") > -1) {
+        var linkName = srcElement.name;
+      fadein(linkName);
+      }
+      }
+}
+
+function domouseout() {
+  if (document.all){
+  srcElement = window.event.srcElement;
+  if (srcElement.className.indexOf("oform") > -1) {
+        var linkName = srcElement.name;
+      fadeout(linkName);
+      }
+      }
+}
+
+function makearray(n) {
+    this.length = n;
+    for(var i = 1; i <= n; i++)
+        this[i] = 0;
+    return this;
+}
+
+hexa = new makearray(16);
+for(var i = 0; i < 10; i++)
+    hexa[i] = i;
+hexa[10]="a"; hexa[11]="b"; hexa[12]="c";
+hexa[13]="d"; hexa[14]="e"; hexa[15]="f";
+
+function hex(i) {
+    if (i < 0)
+        return "00";
+    else if (i > 255)
+        return "ff";
+    else
+       return "" + hexa[Math.floor(i/16)] + hexa[i%16];}
+
+function setbgColor(r, g, b, element) {
+      var hr = hex(r); var hg = hex(g); var hb = hex(b);
+      element.style.color = "#"+hr+hg+hb;
+}
+
+function fade(sr, sg, sb, er, eg, eb, step, direction, element){
+    for(var i = 0; i <= step; i++) {
+setTimeout("setbgColor(Math.floor(" +sr+ " *(( " +step+ " - " +i+ " )/ " +step+ " ) + " +er+ " * (" +i+ "/" +step+ ")),Math.floor(" +sg+ " * (( " +step+ " - " +i+ " )/ " +step+ " ) + " +eg+ " * (" +i+ "/" +step+ ")),Math.floor(" +sb+ " * ((" +step+ "-" +i+ ")/" +step+ ") + " +eb+ " * (" +i+ "/" +step+ ")),"+element+");",i*step);
+    }
+}
+
+function fadeout(element) {
+    fade(246,94,246, 0,0,0, 30, 1, element);
+}
+function fadein(element) {
+    fade(0,0,0, 246,94,246, 20, 1, element);
+}
+
+</SCRIPT>
+
+<head>
+<TITLE>Сборник задач</TITLE>
+<meta http-equiv = "content-type" content = "text/html; charset =utf-8">
+  <link rel = "stylesheet" type = "text/css" href = "style.css">
+</head>
+
+<BODY BACKGROUND="foni.gif">
+
+<table noborder align="center" valign="top" width=100%>
+
+<tr>
+
+<td  align="center">
+ <font size="+3">
+  <a href="oglav.htm" class="oform" name="s1">Оглавление</a>
+ </font>
+</td>
+
+<td align="center">
+ <font size="+3">
+  <a href="spisoc.htm" class="oform" name="s2">Номера задач</a>
+ </font>
+</td>
+
+<td align="center">
+ <font size="+3">
+  <a href="info.htm" class="oform" name="s3">Информация</a>
+ </font>
+</td>
+
+</tr>
+
+</table>
+
+<hr color="fuchsia" size="3">
+
+<table noborder align="center" valign="top" width=100%>
+
+<tr>
+
+<td  align="center">
+ <font size="+2">
+ <a href="info1.htm" class="oform" name="s4">Благодарности</a>
+</td>
+
+<td align="center">
+ <font size="+2">
+ <a href="info2.htm" class="oform" name="s5">О задачнике</a>
+</td>
+
+</tr>
+
+</table>
+
+<hr color="fuchsia" size=3>
+
+<div>
+
+ <ol><dl><a class="heed">Внимание!</a> Тексты последних глав (23 - 36) ещё не 
+     проверены!!! По мере проверки будут выкладываться обновления. Возможно, скоро будет изменён список задач 
+		 (из-за повторения некоторых задач и прочих недостатков). Но эти изменения вступят в силу не раньше 
+		 следующего учебного года. В связи с этим реализованы не все замыслы по этой части задачника (будем 
+		 надеяться, что хватит времени на их воплощение в ближайшем будующем). В частности, предпологается 
+		 создать ещё один список, в котором будет присутствовать разделение по вариантам.</dl><br>
+
+		 <dl>Задачник был выложен 21.10.2003 в 18.07.<!--Сделано это было с компьютера по имени 
+		 k401_1 под песню Welcome home (Sanitarium) в исполнении моей любимой группы Metallica. При этом торжественном 
+		 событии присутствовал fat, с чем его (как и всех нас) и поздраляю --></dl><br>
+		 <dl>Просьба ко всем, кто пользуется этим задачником: сообщайте о всех ошибках и недостатках, принимаются 
+		 так же и пожелания по оформлению задачника и доступу к данным. Писать можно по следующим адресам:</dl><br>
+		 
+		 		 <div class="spiski" id="email">nio@75.ru</div><br>
+				 <div class="spiski" id="email">nio@cstu.chita.ru</div><br>
+				 <div class="spiski" id="email">admin@cstu.chita.ru</div><br>				 
+
+	 		 <!--Сколько времени эти адреса тут валяются никто не знает. А толку никакого!!! Хоть бы один человек
+ 		 		   написал письмо. Хотя нет, один написал, но его об этом я лично попросил, так что это не считается.-->
+	 
+  <dl><a class="heed">Все</a>, кто найдёт ошибки или выскажет ценное пожелание будут занесены в 
+	список благодарностей.</dl><br>
+	 <dl>При создании задачника были использованы:</dl><br>
+
+<div class="spiski" id="usesoft">HTML - Kit</div><br>
+<div class="spiski" id="usesoft">UltraEdit - 32 (версия 9.0)</div><br>
+<div class="spiski" id="usesoft">Adobe Photoshop 7.0</div><br>
+<div class="spiski" id="usesoft">Paint</div><br>
+<div class="spiski" id="usesoft">Microsoft Word</div><br>
+
+	  <center>
+
+			<a>Последнее обновление:</a><br> 
+ 			 <a class="date">
+				 <script language="JavaScript">
+				 	document.write (document.lastModified);
+				 </script>
+			</a>
+		</center> 
+
+	</div>
+ </ol>
+ <!-- Хотел ещё написать что-нибудь типа "что нового" или "история версий", но кому это нафиг нужно? -->
+ <p align = "right">nio</p><!-- надо же было хоть где-нибудь оставить автограф :) -->
+
+<!-- структура основной таблицы списка задач:
+        заголовок
+        [1]     - порядковый номер задачи (1..55) 
+        [2..17] - номер задачи + ссылка "silver"
+				
+
+				
+     ширина таблицы, находящейся в конце каждой главы
+
+				 glava[1]    - 70%		 
+				 glava[2-35] - 100% 
+				 glava[36]   - 65%				
+				
+     описание классов
+		 
+				 .nad        - надчёркнутый текст
+				 .pod				 - подчёркнутый текст
+				 .pere			 - перечёркнутый текст
+				 .run				 - рисунок возле ссылки
+				 .styletable - класс, определяющий стиль таблицы списка задач 
+				 .styleit		 - класс, используемый для оформления текста в списке задач (номера задач) 
+				 .bignum		 - класс, используемый для оформления текста в списке задач (номера вариантов)
+				 .heed			 - класс обеспечивает большой красный текст 
+				 .date			 - класс, используемый для оформления даты последнего обновления
+				 .spiski		 
+				    #email   - список адресов электронной почты
+						#blag		 - список благодарностей
+						#usesoft - используемые программы 
+	
+		число строк в файлах      число катинок 
+
+					glava01 - 153       3
+					glava02 - 178				11
+					glava03 - 121				2
+					glava04 - 277				35
+					glava05 -	122				26													 
+					glava06 - 296				14
+					glava07 - 456				25
+					glava08 - 182				0
+					glava09 - 322				4
+					glava10 - 355				19
+					glava11 - 391				8
+					glava12 - 292				21
+					glava13 - 443				2
+					glava14 - 192				5
+					glava15 - 253				10
+					glava16 - 179				0
+					glava17 - 203				7
+					glava18 - 311				2
+					glava19 - 119				3
+					glava20 - 158				9
+					glava21 - 156				5
+					glava22 - 383				32
+					glava23 - 233				19
+					glava24 - 128				37
+					glava25 - 135				13
+					glava26 - 213				2
+					glava27 - 185				0
+					glava28 - 100				1
+					glava29 - 120				2
+					glava30 - 681				37
+					glava31 - 135				3
+					glava32 - 243				8
+					glava33 - 448				8
+					glava34 - 122				1
+					glava35 - 118				0
+					glava36 - 131				7
+															+5 (оформление)
+					info.htm - 147
+					info1.htm - 174
+					info2.htm - 280
+					oglav.htm - 194
+					spisoc.htm - 1276
+					style.css - 117
+
+					всего картинок      386
+					
+					  в главах           - 8534
+						в остальных файлах - 2188
+						             всего - 10722
+						
+				--> 
+ 
+ 
+</body>
+</html>

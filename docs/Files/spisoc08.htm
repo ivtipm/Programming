@@ -1,0 +1,263 @@
+<html>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+// Бегущая строка
+
+var scrollCounter = 0;
+var scrollText = "Кафедра ИВТ и ПМ";
+var scrollDelay = 50;
+
+var i = 0;
+while (i ++ < 140)
+scrollText = " " + scrollText;
+
+function Scroller()
+{
+window.status = scrollText.substring(scrollCounter++,
+scrollText.length);
+if (scrollCounter == scrollText.length)
+scrollCounter = 0;
+setTimeout("Scroller()", scrollDelay);
+}
+
+Scroller();
+
+// Плавная смена цвета
+
+document.onmouseover = domouseover;
+document.onmouseout = domouseout;
+
+function domouseover() {
+  if(document.all){
+  srcElement = window.event.srcElement;
+  if (srcElement.className.indexOf("oform") > -1) {
+        var linkName = srcElement.name;
+      fadein(linkName);
+      }
+      }
+}
+
+function domouseout() {
+  if (document.all){
+  srcElement = window.event.srcElement;
+  if (srcElement.className.indexOf("oform") > -1) {
+        var linkName = srcElement.name;
+      fadeout(linkName);
+      }
+      }
+}
+
+function makearray(n) {
+    this.length = n;
+    for(var i = 1; i <= n; i++)
+        this[i] = 0;
+    return this;
+}
+
+hexa = new makearray(16);
+for(var i = 0; i < 10; i++)
+    hexa[i] = i;
+hexa[10]="a"; hexa[11]="b"; hexa[12]="c";
+hexa[13]="d"; hexa[14]="e"; hexa[15]="f";
+
+function hex(i) {
+    if (i < 0)
+        return "00";
+    else if (i > 255)
+        return "ff";
+    else
+       return "" + hexa[Math.floor(i/16)] + hexa[i%16];}
+
+function setbgColor(r, g, b, element) {
+      var hr = hex(r); var hg = hex(g); var hb = hex(b);
+      element.style.color = "#"+hr+hg+hb;
+}
+
+function fade(sr, sg, sb, er, eg, eb, step, direction, element){
+    for(var i = 0; i <= step; i++) {
+setTimeout("setbgColor(Math.floor(" +sr+ " *(( " +step+ " - " +i+ " )/ " +step+ " ) + " +er+ " * (" +i+ "/" +step+ ")),Math.floor(" +sg+ " * (( " +step+ " - " +i+ " )/ " +step+ " ) + " +eg+ " * (" +i+ "/" +step+ ")),Math.floor(" +sb+ " * ((" +step+ "-" +i+ ")/" +step+ ") + " +eb+ " * (" +i+ "/" +step+ ")),"+element+");",i*step);
+    }
+}
+
+function fadeout(element) {
+    fade(246,94,246, 0,0,0, 30, 1, element);
+}
+function fadein(element) {
+    fade(0,0,0, 246,94,246, 20, 1, element);
+}
+
+</SCRIPT>
+
+<head>
+<TITLE>Номера задач</TITLE>
+<meta http-equiv = "content-type" content = "text/html; charset =utf-8">
+<link rel = "stylesheet" type = "text/css" href = "style.css">
+</head>
+
+<BODY BACKGROUND="fon.jpg">
+
+<table noborder align="center" valign="top" width=100%>
+
+<tr>
+
+<td  align="center">
+ <font size="+3">
+  <a href="oglav.htm" class="oform" name="s1">Оглавление</a>
+ </font>
+</td>
+
+<td align="center">
+ <font size="+3">
+  <a href="spisoc.htm" class="oform" name="s2">Номера задач</a>
+ </font>
+</td>
+
+<td align="center">
+ <font size="+3">
+  <a href="info.htm" class="oform" name="s3">Информация</a>
+ </font>
+</td>
+
+</tr>
+
+</table>
+
+<hr color=rgb(246,94,246) size="3">
+
+<table border="1" cellspacing="1" align = "center" class="styletable">
+ 
+ <tr>
+  <td align="center">Тема</td>
+  <td align="center" class="styleit">№</td>
+  <td align="center" colspan="16" class="bignum">№ Варианта</td>
+ </tr>
+
+<!-- номера вариантов -->
+<tr class="bignum">
+ <td colspan="2">&nbsp;</td>
+ <td align="center">1</td>
+ <td align="center">2</td>
+ <td align="center">3</td>
+ <td align="center">4</td>
+ <td align="center">5</td>
+ <td align="center">6</td>
+ <td align="center">7</td>
+ <td align="center">8</td>
+ <td align="center">9</td>
+ <td align="center">10</td>
+ <td align="center">11</td>
+ <td align="center">12</td>
+ <td align="center">13</td>
+ <td align="center">14</td>
+ <td align="center">15</td>
+ <td align="center">16</td>
+</tr>
+
+<!-- структура основной таблицы:
+        заголовок
+        [1]     - порядковый номер задачи (1..55) 
+        [2..17] - номер задачи + ссылка "silver"-->
+
+<tr>
+<td align="center" rowspan="4">Обработка<br> матриц</td>
+<td align="center" class="styleit">28</td>
+<td align="center"><a href="../Glava20/index20.htm#z673">673</A></td>
+<td align="center" bgcolor="silver"><a href="../Glava20/index20.htm#z674">674</A></td>
+<td align="center"><a href="../Glava20/index20.htm#z675">675</A></td>
+<td align="center" bgcolor="silver"><a href="../Glava20/index20.htm#z676">676а</A></td>
+<td align="center"><a href="../Glava20/index20.htm#z676">676б</A></td>
+<td align="center" bgcolor="silver"><a href="../Glava20/index20.htm#z677">677а</A></td>
+<td align="center"><a href="../Glava20/index20.htm#z677">677б</A></td>
+<td align="center" bgcolor="silver"><a href="../Glava20/index20.htm#z677">677в</A></td>
+<td align="center"><a href="../Glava20/index20.htm#z677">677г</A></td>
+<td align="center" bgcolor="silver"><a href="../Glava20/index20.htm#z678">678</A></td>
+<td align="center"><a href="../Glava20/index20.htm#z679">679а</A></td>
+<td align="center" bgcolor="silver"><a href="../Glava20/index20.htm#z679">679б</A></td>
+<td align="center"><a href="../Glava20/index20.htm#z680">680а</A></td>
+<td align="center" bgcolor="silver"><a href="../Glava20/index20.htm#z680">680б</A></td>
+<td align="center"><a href="../Glava20/index20.htm#z681">681</A></td>
+<td align="center" bgcolor="silver"><a href="../Glava20/index20.htm#z684">684</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">29</td>
+<td align="center"><a href="../Glava20/index20.htm#z685">685</A></td>
+<td align="center" bgcolor="silver"><a href="../Glava20/index20.htm#z686">686</A></td>
+<td align="center"><a href="../Glava20/index20.htm#z687">687</A></td>
+<td align="center" bgcolor="silver"><a href="../Glava20/index20.htm#z688">688</A></td>
+<td align="center"><a href="../Glava20/index20.htm#z689">689</A></td>
+<td align="center" bgcolor="silver"><a href="../Glava20/index20.htm#z690">690</A></td>
+<td align="center"><a href="../Glava20/index20.htm#z691">691а</A></td>
+<td align="center" bgcolor="silver"><a href="../Glava20/index20.htm#z691">691б</A></td>
+<td align="center"><a href="../Glava20/index20.htm#z691">691в</A></td>
+<td align="center" bgcolor="silver"><a href="../Glava20/index20.htm#z691">691г</A></td>
+<td align="center"><a href="../Glava20/index20.htm#z692">692а</A></td>
+<td align="center" bgcolor="silver"><a href="../Glava20/index20.htm#z692">692б</A></td>
+<td align="center"><a href="../Glava20/index20.htm#z692">692в</A></td>
+<td align="center" bgcolor="silver"><a href="../Glava20/index20.htm#z692">692г</A></td>
+<td align="center"><a href="../Glava20/index20.htm#z692">692д</A></td>
+<td align="center" bgcolor="silver"><a href="../Glava20/index20.htm#z692">692е</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">30</td>
+<td align="center"><a href="../Glava20/index20.htm#z692">692ж</A></td>
+<td align="center" bgcolor="silver"><a href="../Glava20/index20.htm#z692">692з</A></td>
+<td align="center"><a href="../Glava20/index20.htm#z692">692и</A></td>
+<td align="center" bgcolor="silver"><a href="../Glava20/index20.htm#z692">692к</A></td>
+<td align="center"><a href="../Glava20/index20.htm#z693">693а</A></td>
+<td align="center" bgcolor="silver"><a href="../Glava20/index20.htm#z693">693б</A></td>
+<td align="center"><a href="../Glava20/index20.htm#z694">694а</A></td>
+<td align="center" bgcolor="silver"><a href="../Glava20/index20.htm#z694">694б</A></td>
+<td align="center"><a href="../Glava20/index20.htm#z694">694в</A></td>
+<td align="center" bgcolor="silver"><a href="../Glava20/index20.htm#z694">694г</A></td>
+<td align="center"><a href="../Glava20/index20.htm#z694">694д</A></td>
+<td align="center" bgcolor="silver"><a href="../Glava20/index20.htm#z694">694е</A></td>
+<td align="center"><a href="../Glava20/index20.htm#z694">694ж</A></td>
+<td align="center" bgcolor="silver"><a href="../Glava20/index20.htm#z694">694з</A></td>
+<td align="center"><a href="../Glava20/index20.htm#z694">694и</A></td>
+<td align="center" bgcolor="silver"><a href="../Glava20/index20.htm#z694">694к</A></td>
+</tr>
+
+<tr>
+<td align="center" class="styleit">31</td>
+<td align="center"><a href="../Glava20/index20.htm#z694">694л</A></td>
+<td align="center" bgcolor="silver"><a href="../Glava20/index20.htm#z694">694м</A></td>
+<td align="center"><a href="../Glava20/index20.htm#z694">694н</A></td>
+<td align="center" bgcolor="silver"><a href="../Glava20/index20.htm#z694">694о</A></td>
+<td align="center"><a href="../Glava20/index20.htm#z695">695м</A></td>
+<td align="center" bgcolor="silver"><a href="../Glava20/index20.htm#z694">694л</A></td>
+<td align="center"><a href="../Glava20/index20.htm#z694">694к</A></td>
+<td align="center" bgcolor="silver"><a href="../Glava20/index20.htm#z694">694и</A></td>
+<td align="center"><a href="../Glava20/index20.htm#z694">694з</A></td>
+<td align="center" bgcolor="silver"><a href="../Glava20/index20.htm#z694">694ж</A></td>
+<td align="center"><a href="../Glava20/index20.htm#z694">694е</A></td>
+<td align="center" bgcolor="silver"><a href="../Glava20/index20.htm#z694">694д</A></td>
+<td align="center"><a href="../Glava20/index20.htm#z694">694г</A></td>
+<td align="center" bgcolor="silver"><a href="../Glava20/index20.htm#z694">694в</A></td>
+<td align="center"><a href="../Glava20/index20.htm#z694">694б</A></td>
+<td align="center" bgcolor="silver"><a href="../Glava20/index20.htm#z694">694а</A></td>
+</tr>
+
+</table>
+
+<ol>
+ <ol>
+  <a href="spisoc01.htm">&nbsp 1. Арифметика действительных чисел</a><br>
+  <a href="spisoc02.htm">&nbsp 2. Разветвления</a><br>
+  <a href="spisoc03.htm">&nbsp 3. Простейшая целочисленная арифметика</a><br>
+  <a href="spisoc04.htm">&nbsp 4. Простейшие циклы</a><br>
+  <a href="spisoc05.htm">&nbsp 5. Массивы. Простейшие массивы</a><br>
+  <a href="spisoc06.htm">&nbsp 6. Массивы. Циклы и разветвления</a><br>	 	 	 	 
+  <a href="spisoc07.htm">&nbsp 7. Вложенные циклы и итерации</a><br>
+  <a class="activ">&nbsp 8. Обработка матриц</a><br>
+  <a href="spisoc09.htm">&nbsp 9. Графика</a><br>
+  <a href="spisoc10.htm">10. Использoвание процедур и функций</a><br>
+  <a href="spisoc11.htm">11. Файлы</a><br>
+  <a href="spisoc12.htm">12. Списки</a><br>
+ </ol>
+</ol>	
+
+</body>
+</html>

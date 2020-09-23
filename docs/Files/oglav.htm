@@ -1,0 +1,194 @@
+<html>
+
+<script language="JavaScript">
+// Рисунок возле ссылки
+
+browser_name = navigator.appName; 
+browser_version = parseFloat(navigator.appVersion); 
+if (browser_name == "Netscape" && browser_version >= 3.0) { roll = 'true'; } 
+else if (browser_name == "Microsoft Internet Explorer" && browser_version >= 3.0) { roll = 'true'; } 
+else { roll = 'false'; } 
+function load(location){ 
+return image; 
+} 
+if (roll == 'true'){ 
+tr=new Image(); 
+tr.src="on.gif";
+} 
+function show(where){ 
+if (roll == 'true'){ 
+stored=where; 
+storedLocation=document.images[where].src; 
+document.images[where].src="on.gif";
+} 
+} 
+function hide(){ 
+if (roll == 'true') document.images[stored].src=storedLocation; 
+}
+
+// Бегущая строка
+
+var scrollCounter = 0;
+var scrollText = "Кафедра ИВТ и ПМ";
+var scrollDelay = 50;
+
+var i = 0;
+while (i ++ < 140)
+scrollText = " " + scrollText;
+
+function Scroller()
+{
+window.status = scrollText.substring(scrollCounter++,
+scrollText.length);
+if (scrollCounter == scrollText.length)
+scrollCounter = 0;
+setTimeout("Scroller()", scrollDelay);
+}
+
+Scroller();
+
+// Плавная смена цвета
+
+document.onmouseover = domouseover;
+document.onmouseout = domouseout;
+
+function domouseover() {
+  if(document.all){
+  srcElement = window.event.srcElement;
+  if (srcElement.className.indexOf("oform") > -1) {
+        var linkName = srcElement.name;
+      fadein(linkName);
+      }
+      }
+}
+
+function domouseout() {
+  if (document.all){
+  srcElement = window.event.srcElement;
+  if (srcElement.className.indexOf("oform") > -1) {
+        var linkName = srcElement.name;
+      fadeout(linkName);
+      }
+      }
+}
+
+function makearray(n) {
+    this.length = n;
+    for(var i = 1; i <= n; i++)
+        this[i] = 0;
+    return this;
+}
+
+hexa = new makearray(16);
+for(var i = 0; i < 10; i++)
+    hexa[i] = i;
+hexa[10]="a"; hexa[11]="b"; hexa[12]="c";
+hexa[13]="d"; hexa[14]="e"; hexa[15]="f";
+
+function hex(i) {
+    if (i < 0)
+        return "00";
+    else if (i > 255)
+        return "ff";
+    else
+       return "" + hexa[Math.floor(i/16)] + hexa[i%16];}
+
+function setbgColor(r, g, b, element) {
+      var hr = hex(r); var hg = hex(g); var hb = hex(b);
+      element.style.color = "#"+hr+hg+hb;
+}
+
+function fade(sr, sg, sb, er, eg, eb, step, direction, element){
+    for(var i = 0; i <= step; i++) {
+setTimeout("setbgColor(Math.floor(" +sr+ " *(( " +step+ " - " +i+ " )/ " +step+ " ) + " +er+ " * (" +i+ "/" +step+ ")),Math.floor(" +sg+ " * (( " +step+ " - " +i+ " )/ " +step+ " ) + " +eg+ " * (" +i+ "/" +step+ ")),Math.floor(" +sb+ " * ((" +step+ "-" +i+ ")/" +step+ ") + " +eb+ " * (" +i+ "/" +step+ ")),"+element+");",i*step);
+    }
+}
+function fadeout(element) {
+    fade(246,94,246, 0,0,0, 20, 1, element);
+}
+function fadein(element) {
+    fade(0,0,0, 246,94,246, 20, 1, element);
+}
+
+</script>
+
+<head>
+<TITLE>Оглавление</TITLE>
+<meta http-equiv = "content-type" content = "text/html; charset =utf-8">
+<link rel="stylesheet" type="text/css" href = "style.css">
+</head>
+<BODY BACKGROUND="fon.jpg">
+
+<table noborder align="center" valign="top" width=100%>
+
+<tr>
+
+<td  align="center">
+ <font size="+3">
+  <a href="oglav.htm" class="oform" name="s1">Оглавление</a>
+ </font>
+</td>
+
+<td align="center">
+ <font size="+3">
+  <a href="spisoc.htm" class="oform" name="s2">Номера задач</a>
+ </font>
+</td>
+
+<td align="center">
+ <font size="+3">
+  <a href="info.htm" class="oform" name="s3">Информация</a>
+ </font>
+</td>
+
+</tr>
+
+</table>
+
+<hr color = "fuchsia" size="3">
+
+ <ol>
+ 	 <b>
+		<img name="im1" class="run"><a href="../Glava01/index01.htm" onMouseOver="show('im1')" onMouseOut="hide()"> §&nbsp;1 &nbsp;(&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp; &nbsp;- &nbsp;&nbsp;32&nbsp;&nbsp;) Арифметика действительных чисел. Вычисления по формулам </a><br>
+ 	  <img name="im2" class="run"><a href="../Glava02/index02.htm" onMouseOver="show('im2')" onMouseOut="hide()"> §&nbsp;2 &nbsp;(&nbsp;&nbsp;&nbsp;33 &nbsp;- &nbsp;&nbsp;60&nbsp;&nbsp;) Разветвления </a><br>
+ 	  <img name="im3" class="run"><a href="../Glava03/index03.htm" onMouseOver="show('im3')" onMouseOut="hide()"> §&nbsp;3 &nbsp;(&nbsp;&nbsp;&nbsp;61 &nbsp;- &nbsp;&nbsp;76&nbsp;&nbsp;) Простейшая целочисленная арифметика </a><br>
+ 	  <img name="im4" class="run"><a href="../Glava04/index04.htm" onMouseOver="show('im4')" onMouseOut="hide()"> §&nbsp;4 &nbsp;(&nbsp;&nbsp;&nbsp;77 &nbsp;- &nbsp;119&nbsp;) Простейшие циклы </a><br>
+	  <img name="im5" class="run"><a href="../Glava05/index05.htm" onMouseOver="show('im5')" onMouseOut="hide()"> §&nbsp;5 &nbsp;(&nbsp;120 &nbsp;- &nbsp;135&nbsp;) Простейшие графические построения </a><br>
+	  <img name="im6" class="run"><a href="../Glava06/index06.htm" onMouseOver="show('im6')" onMouseOut="hide()"> §&nbsp;6 &nbsp;(&nbsp;136 &nbsp;- &nbsp;177&nbsp;) Пошаговый ввод данных и вывод результатов </a><br>
+	  <img name="im7" class="run"><a href="../Glava07/index07.htm" onMouseOver="show('im7')" onMouseOut="hide()"> §&nbsp;7 &nbsp;(&nbsp;178 &nbsp;- &nbsp;250&nbsp;) Сочетания цикла и разветвления </a><br>
+	  <img name="im8" class="run"><a href="../Glava08/index08.htm" onMouseOver="show('im8')" onMouseOut="hide()"> §&nbsp;8 &nbsp;(&nbsp;251 &nbsp;- &nbsp;270&nbsp;) Обработка последовательностей символов </a><br>
+	  <img name="im9" class="run"><a href="../Glava09/index09.htm" onMouseOver="show('im9')" onMouseOut="hide()"> §&nbsp;9 &nbsp;(&nbsp;271 &nbsp;- &nbsp;316&nbsp;) Вычисления с хранением последовательности значений </a><br>
+	  <img name="im10" class="run"><a href="../Glava10/index10.htm" onMouseOver="show('im10')" onMouseOut="hide()"> §10 (&nbsp;317 &nbsp;- &nbsp;366&nbsp;) Вложенные циклы</a><br>
+	  <img name="im11" class="run"><a href="../Glava11/index11.htm" onMouseOver="show('im11')" onMouseOut="hide()"> §11 (&nbsp;367 &nbsp;- &nbsp;423&nbsp;) Вложенные циклы в матричных задачах</a><br>
+	  <img name="im12" class="run"><a href="../Glava12/index12.htm" onMouseOver="show('im12')" onMouseOut="hide()"> §12 (&nbsp;424 &nbsp;- &nbsp;470&nbsp;) Использoвание процедур</a><br>
+	  <img name="im13" class="run"><a href="../Glava13/index13.htm" onMouseOver="show('im13')" onMouseOut="hide()"> §13 (&nbsp;471 &nbsp;- &nbsp;530&nbsp;) Файлы</a><br>
+	  <img name="im14" class="run"><a href="../Glava14/index14.htm" onMouseOver="show('im14')" onMouseOut="hide()"> §14 (&nbsp;531 &nbsp;- &nbsp;553&nbsp;) Вычисление с хранением последовательностей, число членов которых зависит от исходных данных</a><br>
+	  <img name="im15" class="run"><a href="../Glava15/index15.htm" onMouseOver="show('im15')" onMouseOut="hide()"> §15 (&nbsp;554 &nbsp;- &nbsp;580&nbsp;) Целые числа</a><br>
+	  <img name="im16" class="run"><a href="../Glava16/index16.htm" onMouseOver="show('im16')" onMouseOut="hide()"> §16 (&nbsp;581 &nbsp;- &nbsp;605&nbsp;) Системы счисления</a><br>
+	  <img name="im17" class="run"><a href="../Glava17/index17.htm" onMouseOver="show('im17')" onMouseOut="hide()"> §17 (&nbsp;606 &nbsp;- &nbsp;627&nbsp;) Геометрия</a><br>
+	  <img name="im18" class="run"><a href="../Glava18/index18.htm" onMouseOver="show('im18')" onMouseOut="hide()"> §18 (&nbsp;628 &nbsp;- &nbsp;657&nbsp;) Сортировка массивов и файлов</a><br>
+	  <img name="im19" class="run"><a href="../Glava19/index19.htm" onMouseOver="show('im19')" onMouseOut="hide()"> §19 (&nbsp;658 &nbsp;- &nbsp;672&nbsp;) Многочлены</a><br>
+	  <img name="im20" class="run"><a href="../Glava20/index20.htm" onMouseOver="show('im20')" onMouseOut="hide()"> §20 (&nbsp;673 &nbsp;- &nbsp;696&nbsp;) Преобразование и построение матриц</a><br>
+	  <img name="im21" class="run"><a href="../Glava21/index21.htm" onMouseOver="show('im21')" onMouseOut="hide()"> §21 (&nbsp;697 &nbsp;- &nbsp;719&nbsp;) Матричная алгебра</a><br>
+	  <img name="im22" class="run"><a href="../Glava22/index22.htm" onMouseOver="show('im22')" onMouseOut="hide()"> §22 (&nbsp;720 &nbsp;- &nbsp;746&nbsp;) Численные методы</a><br>
+	  <img name="im23" class="run"><a href="../Glava23/index23.htm" onMouseOver="show('im23')" onMouseOut="hide()"> §23 (&nbsp;747 &nbsp;- &nbsp;754&nbsp;) Случайные числа</a><br>
+	  <img name="im24" class="run"><a href="../Glava24/index24.htm" onMouseOver="show('im24')" onMouseOut="hide()"> §24 (&nbsp;755 &nbsp;- &nbsp;767&nbsp;) Вычисления с некоторой точностью</a><br>
+    <img name="im25" class="run"><a href="../Glava25/index25.htm" onMouseOver="show('im25')" onMouseOut="hide()"> §25 (&nbsp;768 &nbsp;- &nbsp;784&nbsp;) Физика</a><br>
+	  <img name="im26" class="run"><a href="../Glava26/index26.htm" onMouseOver="show('im26')" onMouseOut="hide()"> §26 (&nbsp;785 &nbsp;- &nbsp;801&nbsp;) Биология</a><br>
+	  <img name="im27" class="run"><a href="../Glava27/index27.htm" onMouseOver="show('im27')" onMouseOut="hide()"> §27 (&nbsp;802 &nbsp;- &nbsp;821&nbsp;) Тексты</a><br>
+	  <img name="im28" class="run"><a href="../Glava28/index28.htm" onMouseOver="show('im28')" onMouseOut="hide()"> §28 (&nbsp;822 &nbsp;- &nbsp;833&nbsp;) Календарь</a><br>
+	  <img name="im29" class="run"><a href="../Glava29/index29.htm" onMouseOver="show('im29')" onMouseOut="hide()"> §29 (&nbsp;834 &nbsp;- &nbsp;842&nbsp;) Криптография</a><br>
+	  <img name="im30" class="run"><a href="../Glava30/index30.htm" onMouseOver="show('im30')" onMouseOut="hide()"> §30 (&nbsp;843 &nbsp;- &nbsp;910&nbsp;) Графика</a><br>
+	  <img name="im31" class="run"><a href="../Glava31/index31.htm" onMouseOver="show('im31')" onMouseOut="hide()"> §31 (&nbsp;911 &nbsp;- &nbsp;932&nbsp;) Звукогенерация</a><br>
+	  <img name="im32" class="run"><a href="../Glava32/index32.htm" onMouseOver="show('im32')" onMouseOut="hide()"> §32 (&nbsp;933 &nbsp;- &nbsp;971&nbsp;) Графика и движение. Мультипликация</a><br>
+	  <img name="im33" class="run"><a href="../Glava33/index33.htm" onMouseOver="show('im33')" onMouseOut="hide()"> §33 (&nbsp;972 &nbsp;- 1013) Игры</a><br>
+	  <img name="im34" class="run"><a href="../Glava34/index34.htm" onMouseOver="show('im34')" onMouseOut="hide()"> §34 (1014 - 1027) Предметы и группы предметов с фиксированными свойствами</a><br>
+	  <img name="im35" class="run"><a href="../Glava35/index35.htm" onMouseOver="show('im35')" onMouseOut="hide()"> §35 (1028 - 1046) Перебор и его сокращение</a><br>
+	  <img name="im36" class="run"><a href="../Glava36/index36.htm" onMouseOver="show('im36')" onMouseOut="hide()"> §36 (1047 - 1052) Некоторые примеры программирования</a><br>
+  </b>
+ </ol>
+
+ <p align = "right">nio</p>
+
+</body>
+</html>

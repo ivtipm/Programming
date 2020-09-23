@@ -1,0 +1,174 @@
+<html>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+// Бегущая строка
+
+var scrollCounter = 0;
+var scrollText = "Кафедра ИВТ и ПМ";
+var scrollDelay = 50;
+
+var i = 0;
+while (i ++ < 140)
+scrollText = " " + scrollText;
+
+function Scroller()
+{
+window.status = scrollText.substring(scrollCounter++,
+scrollText.length);
+if (scrollCounter == scrollText.length)
+scrollCounter = 0;
+setTimeout("Scroller()", scrollDelay);
+}
+
+Scroller();
+
+// Плавная смена цвета
+
+document.onmouseover = domouseover;
+document.onmouseout = domouseout;
+
+function domouseover() {
+  if(document.all){
+  srcElement = window.event.srcElement;
+  if (srcElement.className.indexOf("oform") > -1) {
+        var linkName = srcElement.name;
+      fadein(linkName);
+      }
+      }
+}
+
+function domouseout() {
+  if (document.all){
+  srcElement = window.event.srcElement;
+  if (srcElement.className.indexOf("oform") > -1) {
+        var linkName = srcElement.name;
+      fadeout(linkName);
+      }
+      }
+}
+
+function makearray(n) {
+    this.length = n;
+    for(var i = 1; i <= n; i++)
+        this[i] = 0;
+    return this;
+}
+
+hexa = new makearray(16);
+for(var i = 0; i < 10; i++)
+    hexa[i] = i;
+hexa[10]="a"; hexa[11]="b"; hexa[12]="c";
+hexa[13]="d"; hexa[14]="e"; hexa[15]="f";
+
+function hex(i) {
+    if (i < 0)
+        return "00";
+    else if (i > 255)
+        return "ff";
+    else
+       return "" + hexa[Math.floor(i/16)] + hexa[i%16];}
+
+function setbgColor(r, g, b, element) {
+      var hr = hex(r); var hg = hex(g); var hb = hex(b);
+      element.style.color = "#"+hr+hg+hb;
+}
+
+function fade(sr, sg, sb, er, eg, eb, step, direction, element){
+    for(var i = 0; i <= step; i++) {
+setTimeout("setbgColor(Math.floor(" +sr+ " *(( " +step+ " - " +i+ " )/ " +step+ " ) + " +er+ " * (" +i+ "/" +step+ ")),Math.floor(" +sg+ " * (( " +step+ " - " +i+ " )/ " +step+ " ) + " +eg+ " * (" +i+ "/" +step+ ")),Math.floor(" +sb+ " * ((" +step+ "-" +i+ ")/" +step+ ") + " +eb+ " * (" +i+ "/" +step+ ")),"+element+");",i*step);
+    }
+}
+
+function fadeout(element) {
+    fade(246,94,246, 0,0,0, 30, 1, element);
+}
+function fadein(element) {
+    fade(0,0,0, 246,94,246, 20, 1, element);
+}
+
+</SCRIPT>
+
+<head>
+<TITLE>Сборник задач</TITLE>
+<meta http-equiv = "content-type" content = "text/html; charset =utf-8">
+<link rel = "stylesheet" type = "text/css" href = "style.css">
+</head>
+
+<BODY BACKGROUND = "foni.gif">
+
+<table noborder align="center" valign="top" width=100%>
+
+<tr>
+
+<td  align="center">
+ <font size="+3">
+  <a href="oglav.htm" class="oform" name="s1">Оглавление</a>
+ </font>
+</td>
+
+<td align="center">
+ <font size="+3">
+  <a href="spisoc.htm" class="oform" name="s2">Номера задач</a>
+ </font>
+</td>
+
+<td align="center">
+ <font size="+3">
+  <a href="info.htm" class="oform" name="s3">Информация</a>
+ </font>
+</td>
+
+</tr>
+
+</table>
+
+<hr color="fuchsia" size="3">
+
+<table noborder align="center" valign="top" width=100%>
+
+<tr>
+
+<td  align="center">
+ <font size="+2">
+  <a href="info1.htm" class="oform" name="s4">Благодарности</a>
+ </font>	
+</td>
+
+<td align="center">
+ <font size="+2">
+  <a href="info2.htm" class="oform" name="s5">О задачнике</a>
+ </font>	
+</td>
+
+</tr>
+
+</table>
+
+<hr color="fuchsia" size="3">
+ <ol>
+	<p align="center">Хотелось бы поблагодарить следующих людей: </p>
+	 <a class="spiski" id="blag">Чагочкина Андрея Александровича (alien)</a> - за самые ценные советы по созданию 
+                             	 и оформлению задачника;<br><br>
+ 	 <a class="spiski" id="blag">Дзету</a> - за самое активное участие в поиске ошибок, а так же за 
+                          	   большое количество советов по оформлению задачника.
+ 	                             <!-- к сожалению этот человек, не смотря на все свои заслуги, пожелал остаться 
+															 в этом списке только под ником. А жаль, Родина должна знать своих героев! --><br><br>
+	 <a class="spiski" id="blag">Семигузова Дмитрия Александровича (Quacker)</a> - за предоставление 
+	                             части исходных текстов и за советы по созданию задачника;<br><br>
+	 <a class="spiski" id="blag">Зинченко Елену Валерьевну</a> - за помощь в проверке текста задач;<br><br>
+ 	 <a class="spiski" id="blag">Макарова Дмитрия Андреевича (rainmaker)</a> - за советы по 
+	                             оформлению задачника;<br><br>
+	 <a class="spiski" id="blag">Сорокина Павла Андреевича (fat)</a> -  за скаченную из интернета 
+	                             информацию по html;<br><br>
+ 	 <a class="spiski" id="blag">Винокурова Олега Васильевича (leo)</a> - за помощь в исправлении недостатков;<br><br>
+ 	 <a class="spiski" id="blag">Бурундукову Евгению Юрьевну (eva, она же Evelina)</a> - за помощь в 
+	                             наборе номеров задач;<br><br>
+ 	 <a class="spiski" id="blag">Аганина Сергея Сергеевича (SxSe)</a> - за помощь в поиске ошибок;<br><br>
+ 	 <a class="spiski" id="blag">Всех остальных</a> - за то, что не мешали.
+ </ol>
+
+<p align="right">nio</p>
+
+</body>
+</html>

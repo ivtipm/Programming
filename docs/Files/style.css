@@ -1,0 +1,222 @@
+body {
+    background-attachment:fixed;
+    font-family: Roboto, sans-serif;
+    font-size: 24px;	
+}
+
+
+
+.run {
+		  src:"off.gif";
+			width:9;
+		  height:9; 
+		 }
+
+dl {
+	  text-indent:2 em;
+	 }
+
+
+
+
+
+table, th, td {
+    border: 0px solid black;
+}
+
+.styletable{
+            /*border-style:solid;*/
+            /*border: 1px solid black;*/
+			/*border-width:thin;*/
+			width:90%;}	 		 
+
+.styleit {
+				  font-style:italic;
+          font-size:13pt;
+   			  font-weight:bold;
+				 }	
+		 
+.bignum {
+         font-size:16pt;
+         font-style:normal;
+				 font-variant:normal;
+				 font-weight:normal;
+				 letter-spacing: 0.15em; 
+		background: #AAA
+				} 
+
+A:link {
+        text-decoration:none; 
+	      color:#000000; 
+       }
+
+A:visited {
+           text-decoration:none; 
+           color:#000000; 
+      	  }
+
+.taskNum:hover {
+         text-decoration:none; 
+         font-weight:bold;
+      	 color: #990000; }
+
+
+A:hover {
+         /*text-decoration:none; */
+         /*font-weight:bold;*/
+      	 color: #990000; }
+
+.heed {
+			 font-size:22px;
+			 color:red;
+			}										
+				
+.date {
+			 letter-spacing:0.1 em; 
+			 font-style:italic;
+			 font-weight:bold;
+       font-variant:normal;			  
+			 font-size:30px;
+			 color:blue;
+			}
+			
+.spiski {
+  			 font-style:italic;
+			 	 font-weight:bold;
+       	 font-variant:normal;			  
+			 	 font-size:17px;
+			 	 color:blue;
+				}							
+
+#usesoft {
+				  text-indent:4 em;				  
+				 }
+
+#email {
+			  text-align:center;			  
+			 }
+
+#blag {
+			 font-size:16px;			 
+			}
+								
+div {
+    font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+    text-align:justify; 
+    }
+
+.activ {
+			  font-weight:bold;
+ 	  	  font-size:17px;			 
+			 }
+
+
+
+
+
+/* Список разделов задачника%: Семестры, Летняя практика, ...*/
+.typespisoc {
+	text-align:center;
+	font-size:20px;	
+}
+
+
+.typespisoc li{
+		margin: 0 auto;
+	
+	list-style-type: none;
+	border: 1px solid #aaa;
+	margin-bottom: 1em;
+	
+	width: 400px;
+}
+
+
+.typespisoc li a{
+	display: block;
+	line-height: 2em;
+	height: 2em;
+	width: 100%;
+	background: #eeeeee;
+}
+
+
+.typespisoc li a:hover{
+	display: block;
+	width: 100%;
+	background: #f4f4f4;
+}
+
+
+
+.typespisoc ol{
+	border: 1px solid gray;
+}
+
+		
+.nad {
+      font-style:normal;
+	    font-variant:normal;
+ 	  	font-weight:normal;
+      text-decoration:overline;
+     }
+
+.pod {
+      font-style:normal;
+	    font-variant:normal;
+ 	  	font-weight:normal;
+      text-decoration:underline;
+     }		 
+
+.pere {
+       font-style:normal;
+	     font-variant:normal;
+ 	     font-weight:normal;
+       text-decoration:line-through;
+      }
+		 
+
+
+img {
+     border:0; 
+    }
+
+tbody:nth-child(odd) {
+  background: #EEE;
+}
+
+tbody:hover td[rowspan], tr:hover td {
+   background: #bab6b6; 
+}
+
+td:hover::after,
+th:hover::after {
+  content: "";
+  position: absolute;
+  background-color: #ffa;
+  z-index: -1;
+}
+
+
+#variants{
+	font-family: Serif
+	font-weight: 900;
+	font-size: 20px;
+	line-height: 30px;
+	background: #a5a2a2
+
+}
+
+a:target {
+  /*background*/: #d8d8d8;
+  font-size: 24px;
+  color: #990000;
+}
+
+
+p {
+/*     font-family: "Times New Roman", Times, serif; */
+/*     font-size: 24px; */
+}

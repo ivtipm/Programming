@@ -1,0 +1,383 @@
+<html>
+
+<head> 
+<title>Численные методы</title> 
+<meta http-equiv = "content-type" content = "text/html; charset =utf-8">
+<link rel="stylesheet" type="text/css" href="..\Files\style.css">
+</head>
+
+<body BACKGROUND="../Files/foni.gif">
+<a name="Glava22"></a>
+<A href="../Files/oglav.htm">Оглавление</A><BR>
+<h2>§22 Численные методы</h2>
+
+<ol>
+<div>
+
+<a name="z720"><b>720 </b></a>Даны действительные числа x<sub>1</sub>,..., x<sub>n</sub>, y<sub>1</sub>,..., 
+y<sub>n</sub>, t<sub>1</sub>,..., t<sub>m</sub>  (x<sub>1</sub> &lt; x<sub>2</sub> &lt;...&lt; x<sub>n</sub>, x<sub>
+1</sub> &#8804; t<sub>i</sub> &#8804; x<sub>n</sub>, i = 1,...,m). Число y представляет собой значение некоторой
+функции f от аргумента; y<sub>j</sub> = f (x<sub>j</sub>) (j = 1,...,n).С помощью линейной интерполяции получить 
+значения f (t<sub>1</sub>), f (t<sub>2</sub>),...,f (t<sub>m</sub>).<br><br>
+
+<a name="z721"><b>721 </b></a>Даны действительные числа h, x<sub>1</sub>,..., x<sub>n</sub>, y<sub>1</sub>,..., 
+y<sub>n</sub>.Всё сказанное о x<sub>1</sub>,..., x<sub>n</sub>, y<sub>1</sub>,..., y<sub>n</sub> в предыдущей 
+задаче остаётся в силе. С помощью линейной интерполяции получить значения функции f для значений аргументов,
+равных x<sub>1</sub>,   x<sub>1</sub>+h, x<sub>1</sub>+2h,...,x<sub>1</sub>+kh, где k - наибольшее целое, для 
+которого x<sub>1</sub>+kh &#8804; x<sub>n</sub>. <br><br>
+
+<a name="z722"><b>722 </b></a>Даны натуральное число n, действительные числа x<sub>1</sub>,..., x<sub>n</sub>, 
+y<sub>1</sub>,..., y<sub>n</sub>. Рассмотреть предыдущую задачу, считая что h=(x<sub>n</sub> - x<sub>1</sub>)/n 
+(ответом должна служить последовательность, содержащая n+1 число).<br><br>
+
+<a name="z723"><b>723 </b></a>Даны действительные числа x<sub>1</sub>,..., x<sub>n</sub>, y<sub>1</sub>,..., 
+y<sub>n</sub>, t (x<sub>1</sub> &lt; x<sub>2</sub> &lt;...&lt;x<sub>n</sub>, y<sub>1</sub> &#8804; t &#8804; 
+y<sub>n</sub>). Предполагается, что  y<sub>1</sub>,..., y<sub>n</sub> представляют собой результаты измерения 
+температуры воздуха в моменты времени x<sub>1</sub>,..., x<sub>n</sub>. С помощью линейной интерполяции указать 
+все моменты времени, в которые температура воздуха была равна t (не исключён случай y<sub>j</sub> = y<sub>j + 
+1</sub> = t для некоторых j (1 &#8804; j &#8804; n-1)).<br><br>
+
+<a name="z724"><b>724 </b></a>Вернуться к задачам 721, 723, считая, что разности между соседними известными 
+значениями аргумента x<sub>1</sub>,..., x<sub>n</sub> равны между собой: x<sub>n</sub>-x<sub>n-1</sub> = 
+x<sub>n-1</sub> - x<sub>n-2</sub> = .. .= x<sub>2</sub> - x<sub>1</sub> = h. Вместо x<sub>1</sub>,..., 
+x<sub>n</sub> задаются x<sub>1</sub> и h, порядок остальных исходных данных не изменяется.<br><br>
+
+<a name="z725"><b>725 </b></a>Дано действительное положительное число  &#949;. Методом деления отрезка пополам 
+найти приближённое значение корня уравнения f (x) = 0. Абсолютная погрешность найденного значения не должна 
+превосходить &#949;. (Ниже, рядом с уравнением f (x) = 0, дополнительно указан отрезок, содержащий корень.)<br>
+  <ol>
+	  а) x + ln(x + 0.5) - 0.5 = 0, [0, 2];<br>
+  	б) x<sup>5</sup> - x - 0.2 = 0, [1, 1.1];<br>
+  	в) x<sup>4</sup> + 2x<sup>3</sup> - x - 1 = 0, [0, 1];<br>
+  	г) x<sup>3</sup> - 0.2x<sup>2</sup> - 0.2x - 1.2 = 0, [1, 1.5];<br>
+  	д) (2sin<sup>2</sup>x)/3 - (3cos<sup>2</sup>x)/4 = 0, [0, &#960;/2];<br>
+  	е) x<sup>4</sup> + 0.8x<sup>3</sup> - 0.4x<sup>2</sup> - 1.4x - 1.2 = 0, [-1.2, -0.5];<br>
+  	ж) x<sup>4</sup> - 4.1x<sup>3</sup> + x<sup>2</sup> - 5.1x + 4.1 = 0, [3.7, 5];
+  </ol>
+<br>
+
+<a name="z726"><b>726 </b></a>Дано действительное положительное число  &#949;. Методом хорд вычислить с точностью  
+&#949; *) корень уравнения f (x) = 0 (ниже, следом за уравнением f (x) = 0, дополнительно задан отрезок, содержащий корень):
+  <ol>
+  	а) x2<sup>x</sup> - 1 = 0, [0, 1]; <br>
+  	б) x<sup>2</sup> - sin5x = 0, [0.5, 0.6]; <br>
+  	в) (2sin<sup>2</sup>2x)/3 - (3cos<sup>2</sup>2x)/4 = 0, [0, &#960;/4]; <br>
+  	г) x<sup>3</sup> - 2x<sup>2</sup> + x - 3 = 0, [2.1, 2.2]; <br>
+  	д) (4 + x<sup>2</sup>)(e<sup>x</sup> - e<sup>-x</sup>) = 18, [1.2, 1.3]; <br>
+  	е) x<sup>4</sup> + 0.5x<sup>3</sup> - 4x<sup>2</sup> - 3x - 0.5 = 0, [-1, 0]; <br>
+  	ж) x<sup>2</sup> - 1.3ln(x + 0.5) - 2.8x + 1.15 = 0, [2.1, 2.5]; 
+  </ol>
+<br>
+
+<a name="z727"><b>727 </b></a>Вернуться к предыдущей задаче, считая, что построение приближений к корню уравнения 
+f (x) = 0 следует закончить, когда будет получено такое приближение <a class="nad">x</a>, для которого | f ( <a class="nad">x</a> ) | < &#949;.
+(Этот подход к оценке точности может быть приемлемым только в тех случаях, когда известно, что |f (x)|
+не принимает значений меньше &#949; при значениях x, удалённых от корня уравнения f (x) = 0; рис.41, а, б)
+<p align="center"><img src="image05.gif"></p>
+
+<a name="z728"><b>728 </b></a>В уравнениях, приведённых в задачах 725, 726, вычислить корень, находящийся в 
+заданном отрезке (отрезок следует за уравнением), методом деления отрезка пополам и методом хорд с одной и той же
+ точностью &#949;. Сравнить колличество шагов, которые нужно сделать для получения корня этими методами.<br><br>
+
+<a name="z729"> <b>729</b></a>Дано действительное положительное число  &#949;. Методом касательных вычислить с 
+точностью &#949; корень уравнения f (x) = 0 (ниже, следом за уравнением f (x) = 0, в скобках указано начальное 
+приближение к корню):
+  <ol>
+  	а) x<sup>3</sup> - 2x<sup>2</sup> + x - 3 = 0, (2.2);<br>
+  	б) tg x - x = 0, (4.67);<br>
+  	в) 1.8x<sup>4</sup> - sin 10x = 0, (0.22);<br>
+  	г) x<sup>4</sup> - 3x<sup>2</sup> + 75x - 10 000 = 0, (-11);<br>
+  	д) x<sup>3</sup> - 6x<sup>2</sup> + 20 = 0, (2.31).
+  </ol>
+<br>
+
+<a name="z730"><b>730 </b></a>Решить методом касательных перечисленные в предыдущей задаче уравнения,
+прекращая построения приближений к корню уравнения f (x) = 0 в тот момент, когда будет получено такое приближение 
+<a class="nad">x</a>, для которого |f (<a class="nad">x</a>)| &lt; 0.00001.<br><br>
+
+<a name="z731"> <b>731</b></a>Дано действительное положительное число  &#949;. Методом интерации вычислить 
+с точностью &#949; корень уравнения f (x) = 0 (ниже, следом за уравнением f (x) = 0, в скобках указано начальное 
+приближение к корню):
+  <ol>
+  	а) x - (sin x )/2 - 1 = 0, (0);<br>
+	  б) 2x<sup>3</sup> + 4x - 1 = 0, (0.11);<br>
+  	в) x<sup>3</sup> + 12x - 2 = 0, (0.95);<br>
+  	г) 5x - 8 ln x = 8, (4.32);<br>
+	  д) x<sup>3</sup> + x = 1000, (9.42);<br>
+  	е) x - sin x = 0.25, (1.17);<br>
+	  ж) x<sup>3</sup> - 6x<sup>2</sup> + 20 = 0, (2.25);<br>
+  	з) 5x<sup>3</sup> + 10x<sup>2</sup> + 5x - 1 = 0, (0.6);
+  </ol>
+<br>
+
+<a name="z732"><b>732 </b></a>Сравнить методы деления отрезка попалам, хорд, касательных и интерации,
+поочерёдно используя их для решения одного и того же уравнения. Независимо от метода построения приближений 
+к корню уравнения f (x) = 0 следует заканчивать, как только будет получено такое приближение x, для которого 
+|f (x)|&lt; &#949;. Значенеие &#949; следует поочерёдно брать равным 0.01, 0.001, ..., 0.0000001. Для каждого из 
+методов построить график  или столбчатую диаграмму изменения числа потребовавшихся приближений при переходе 
+от одного значения &#949; к другому. В качестве уравнения, на котором проводится сравнение методов, и отрезка, 
+которому принадлежит корень, следует взять:
+  <ol>
+  	а) x<sup>3</sup> + x<sup>2</sup> - 3 = 0, [0.6, 1.4];<br>
+  	б) x<sup>5</sup> - x - 0.2 = 0, [0.9, 1.1];<br>
+  	в) 5x<sup>3</sup> - x - 1 = 0, [0.6, 0.8];<br>
+  	г) x<sup>3</sup> - 2x - 5 = 0, [1.9, 2.93];<br>
+  	д) x<sup>3</sup> + x = 1000, [9.1, 10];<br>
+  	е) x<sup>4</sup> + 2x<sup>3</sup> - x - 1 = 0, [0, 1].
+  </ol>
+<dl>Для метода касательных и интерации в качестве начального приближения 
+выбирается подходящий конец отрезка.</dl><br>
+
+<a name="z733"><b>733 </b></a>Дано действительное положительное число  &#949;. Найти с помощью подходящих 
+методов все корни уравнения f (x) = 0 с точностью &#949;. Для получения отрезков, содержащих по одному корню 
+уравнения f (x), или для получения начальнх приближений к корням исследовать график функции y = f (x). В 
+качестве f (x) рассмотреть:
+  <ol>
+  	а) x<sup>3</sup> - 6x<sup>2</sup> + 12x + 5 = 0;<br>
+  	б) x<sup>6</sup> + x<sup>2</sup> - 2 = 0;<br>
+  	в) x<sup>3</sup> + 3x + 2 = 0;<br>
+  	г) &#8730;x + 1 = cos(0.5x);<br>
+  	д) 3x<sup>2</sup> - cos2x - 1 = 0;<br>
+  	е) 2 ln x - 1/x + 0.5 = 0;<br>
+  	ж) x<sup>4</sup> - 6x<sup>3</sup> + 9x<sup>2</sup> - 16 = 0.
+  </ol>
+<br>
+
+<a name="z734"><b>734 </b></a>Найти с точностью 0.00001 наименьший корень уравнения:
+  <ol>
+  	а) x<sup>3</sup> - 6x<sup>2</sup> + 19.8 = 0;<br>
+		б) x<sup>4</sup> + x<sup>3</sup> - 10x<sup>2</sup> - 34x - 25 = 0;<br>
+  	в) x<sup>3</sup> - 1.75x + 0.75 = 0;<br>
+  	г) x<sup>5</sup> + 5x<sup>4</sup> - 2x<sup>3</sup> - 4x<sup>2</sup> + 7x - 3 = 0;<br>
+  	д) 3x - sin x = 7;<br>
+	  е) x<sup>8</sup> - 0.4x<sup>3</sup> - 1.24 = 0;<br>
+  	ж)  x = cos x + 1;<br>
+	  з) e<sup>-x</sup> = 0.5 + &#8730;x;<br>
+  	и) x<sup>4</sup> + 39x<sup>3</sup> + 958x<sup>2</sup> - 1081x - 1987 = 0.
+  </ol>
+<dl>Использовать какой-нибудь подходящий численный метод решения уравнений. 
+Для получения отрезка, содержащего наименьший корень уравнения f (x) = 0, или для получения начального приближения 
+к этому корню исследовать график функции y = f (x). </dl><br>
+
+<a name="z735"><b>735 </b></a>Вернуться к предыдущей задаче, рассматривая вместо наименьшего корня:
+  <ol> 
+    а) наибольший;<br>
+		б) наименьший отрицательный;<br>
+		в) наибольший положительный;<br>
+		г) второй по величине;<br>
+		д) наименьший по модулю.
+	</ol>
+<br>
+	
+<a name="z736"><b>736 </b></a>Найти с точностью 0.0001 все корни уравнения 1/x = sin x, принадлежащего 
+отрезку [-&#960;, &#960;]. <br><br>
+
+<a name="z737"><b>737 </b></a>Для каждого целого числа n из диапозона от 1 до 50 найти подходящим методом с 
+точностью 1/n<sup>2</sup> наибольший корень уравнения (x<sup>3</sup>/n<sup>2</sup>) - 3x<sup>2</sup> + 1 = 0 
+(этот корень, как нетрудно показать, меньше, чем 3n<sup>2</sup>). Получить графическое изображение зависимости 
+значения наибольшего корня от n.<br><br>
+
+<a name="z738"><b>738 </b></a>Иногда функция y = f (x) задаётся на некотором отрезке с помощью уравнений вида 
+F(x,y) = 0. Вычислить значения функции, заданой уравнением:
+  <ol>
+    а) y<sup>3</sup> + x<sup>3</sup> - 2xy = 0 для x = 0, -0.1, -0.2,..., -1;<br>
+		б) y<sup>3</sup> + y<sup>2</sup> - x<sup>2</sup> = 0 для x = 1, 1.1, 1.2,..., 2.
+	</ol>	
+<dl>В первом случае функция определена и неотрицательна на отрезке [-1, 0], 
+её значения на этом отрезке меньше, чем 1; во втором случае функция определена и отрицательна на отрезке 
+[1, 2], её значение на этом отрезке меньше, чем 1.5. Для нахождения значений y использовать подходящий 
+численный метод решения уравнений. Вычисление проводить с точностью 0.0001.</dl><br>
+
+<a name="z739"><b>739 </b></a>Написать программу решения по методу Гаусса системы уравнений <p align="center">
+a<sub>11</sub>x<sub>1</sub>+...+a<sub>1n</sub>x<sub>n</sub> = b<sub>1</sub>,<br>
+a<sub>n1</sub>x<sub>1</sub>+...+a<sub>nn</sub>x<sub>n</sub> = b<sub>n</sub>,<br></p>
+<dl>Квадратная матрица [a<sub>ij</sub>]<sub>i,j=1,...,n</sub> и вектор 
+b<sub>1</sub>,...,b<sub>n</sub> - исходные данные задачи (предполагается, что система совместна и имеет 
+единственное решение).</dl><dl>Применить программу для решения следующих систем:</dl>
+  <ol>
+    а) 10x<sub>1</sub> + x<sub>2</sub> + x<sub>3</sub> = 12,<br>
+		   &nbsp; &nbsp; 2x<sub>1</sub> + 10x<sub>2</sub> + x<sub>3</sub> = 13,<br>
+       &nbsp; &nbsp; 2x<sub>1</sub> + 2x<sub>2</sub> + 10x<sub>3</sub> = 14;<br><br>
+    б) 4x<sub>1</sub> + 0,24x<sub>2</sub> - 0,08x<sub>3</sub> = 8,<br>
+       &nbsp; &nbsp;  0,09x<sub>1</sub> + 3x<sub>2</sub> - 0,15x<sub>3</sub> = 9,<br>
+       &nbsp; &nbsp;  0,04x<sub>1</sub> - 0,08x<sub>2</sub> + 4x<sub>3</sub> = 20;<br><br>
+    в) 6x<sub>1</sub> - x<sub>2</sub> - x<sub>3</sub> = 11.33,<br>
+       &nbsp; &nbsp;   - x<sub>1</sub> + 6x<sub>2</sub> - x<sub>3</sub> = 32,<br>
+			 &nbsp; &nbsp;   - x<sub>1</sub> - x<sub>2</sub> + 6x<sub>3</sub> = 42;<br><br>
+		г) 3x<sub>1</sub> - x<sub>2</sub> = 5,<br>
+		   &nbsp; &nbsp;    - 2x<sub>1</sub> + x<sub>2</sub> - x<sub>3</sub> = 0,<br>
+			 &nbsp; &nbsp;  2x<sub>1</sub> - x<sub>2</sub> + 4x<sub>3</sub> = 15;<br><br>
+		д) 0,427x<sub>1</sub> + 3,210x<sub>2</sub> - 1,307x<sub>3</sub> = 2,425,<br>
+		   &nbsp; &nbsp;  4.270x<sub>1</sub> - 0.513x<sub>2</sub> + 1.102x<sub>3</sub> =  - 0.176,<br>
+			 &nbsp; &nbsp;  0.012x<sub>1</sub> + 1.273x<sub>2</sub> - 4.175x<sub>3</sub> = 1.423;<br><br>
+		е) 10x<sub>1</sub> - x<sub>2</sub> + 2x<sub>3</sub> - 3x<sub>4</sub> = 0,<br>
+		   &nbsp; &nbsp;  x<sub>1</sub> - 10x<sub>2</sub> - x<sub>3</sub> + 2x<sub>4</sub> = 0,<br>
+			 &nbsp; &nbsp;    2x<sub>1</sub> + 3x<sub>2</sub> + 20x<sub>3</sub> - x<sub>4</sub> =  - 10,<br>
+			 &nbsp; &nbsp; 3x<sub>1</sub> + 2x<sub>2</sub> + x<sub>3</sub> + 20x<sub>4</sub> = 15;<br><br>
+		ж) 2x<sub>1</sub> + 3x<sub>2</sub> - 4x<sub>3</sub> + x<sub>4</sub> - 3.1 = 0,<br>
+		   &nbsp; &nbsp;  0.1x<sub>1</sub> - 2x<sub>2</sub> - 5x<sub>3</sub> + x<sub>4</sub> - 2 = 0,<br>
+			 &nbsp; &nbsp; 0.15x<sub>1</sub> - 3x<sub>2</sub> + x<sub>3</sub> - 4x<sub>4</sub> - 1 = 0,<br>
+			 &nbsp; &nbsp; 10x<sub>1</sub> + 2x<sub>2</sub> - x<sub>3</sub> + 2.1x<sub>4</sub> + 4.7 = 0;<br><br>
+		з) 3x<sub>1</sub> + 1.5x<sub>2</sub> - x<sub>3</sub> + 2.4x<sub>4</sub> = 6,<br>
+       &nbsp; &nbsp; - 0.5x<sub>1</sub> + x<sub>2</sub> - 3.1x<sub>3</sub> - 4x<sub>4</sub> =  - 12,<br>
+			 &nbsp; &nbsp;  2x<sub>1</sub> - 0.8x<sub>2</sub> - x<sub>4</sub> = 1,<br>
+			 &nbsp; &nbsp; x<sub>1</sub> - 1.3x<sub>2</sub> + 3.9x<sub>3</sub> - 3.7x<sub>4</sub> = 3.1;<br><br>
+		и) 4.13x<sub>1</sub> - 2.87x<sub>2</sub> - 1.94x<sub>3</sub> + 0.61x<sub>4</sub> = 0.32,<br>
+		   &nbsp; &nbsp; 1.27x<sub>1</sub> + 7.23x<sub>2</sub> - 0.15x<sub>3</sub> + 1.71x<sub>4</sub> =  - 4.16,<br>
+			 &nbsp; &nbsp; 0,19x<sub>1</sub> + 2.75x<sub>2</sub> + 3.14x<sub>3</sub> - 0.76x<sub>4</sub> = 2.33,<br>
+       &nbsp; &nbsp;  2.87x<sub>1</sub> + 4.33x<sub>2</sub> - 2.41x<sub>3</sub> - 3.42x<sub>4</sub> = 2.79;<br><br>
+		к) x<sub>1</sub> + 3x<sub>2</sub> - 2x<sub>3</sub> - 2x<sub>5</sub> = 0.5,<br>
+		   &nbsp; &nbsp;  3x<sub>1</sub> + 4x<sub>2</sub> - 5x<sub>3</sub> + x<sub>4</sub> - 3x<sub>5</sub> = 5.4,<br>
+       &nbsp; &nbsp;   - 2x<sub>1</sub> - 5x<sub>2</sub> + 3x<sub>3</sub> - 2x<sub>4</sub> + 2x<sub>5</sub> = 5,<br>
+			 &nbsp; &nbsp;  x<sub>2</sub> - 2x<sub>3</sub> + 5x<sub>4</sub> + 3x<sub>5</sub> = 7.5,<br>
+			 &nbsp; &nbsp;  - 2x<sub>1</sub> - 3x<sub>2</sub> + 2x<sub>3</sub> + 3x<sub>4</sub> + 4x<sub>5</sub> = 3.3;<br><br>
+		л) 7.9x<sub>1</sub> + 5.6x<sub>2</sub> + 5.7x<sub>3</sub> - 7.2x<sub>4</sub> = 6.68,<br>
+		   &nbsp; &nbsp;   8.5x<sub>1</sub> - 4.8x<sub>2</sub> + 0.5x<sub>3</sub> + 3.5x<sub>4</sub> = 9.95,<br>
+			 &nbsp; &nbsp;   4.3x<sub>1</sub> + 4.2x<sub>2</sub> - 3.2x<sub>3</sub> + 9.3x<sub>4</sub> = 8.6,<br>
+			 &nbsp; &nbsp;   3.2x<sub>1</sub> - 1.4x<sub>2</sub> - 8.9x<sub>3</sub> + 8.3x<sub>4</sub> = 1;<br><br>
+		м) 10.2x<sub>1</sub> + 6.07x<sub>2</sub> - 9.1x<sub>3</sub> + 50.3 = 0,<br>
+		   &nbsp; &nbsp;  9.28x<sub>1</sub> - 79.6x<sub>2</sub> - 4.92x<sub>3</sub> + 25.8 = 0,<br>
+			 &nbsp; &nbsp;   68.3x<sub>1</sub> - 2.71x<sub>2</sub> - 8.14x<sub>3</sub> + 32.6 = 0.
+  </ol>
+<br>
+
+<a name="z740"><b>740 </b></a>Дано действительное положительное число &nbsp;&#949;. Методом итерации решить 
+систему линейных алгебраических уравнений с точностью &nbsp;&#949;. В данной задаче вычисление с точностью 
+&nbsp;&#949; означает следуещее. Вычисляется последовательность векторов - приближений x<sup>(m)</sup> = (x<sub>1</sub>
+<sup>(m)</sup>,x<sub>2</sub> <sup>(m)</sup>&nbsp; ..., x<sub>n</sub> <sup>(m)</sup>), где n - число неизвестных 
+системы, m = 0,1,2, ... Если для некоторого k выполнено условие <p align="center">
+<img src="image13.gif" align="middle">, &nbsp; i = 1,2, ..., n,</p>
+то вектор x<sup>(k)</sup> = (x<sub>1</sub> <sup>(k)</sup>, x<sub>2</sub><sup>(k)</sup>&nbsp; ..., x<sub>n</sub>
+<sup>(k)</sup>) считается решением системы с точностью &#949; :
+  <ol>
+    а)&nbsp; x<sub>1</sub> = 2 - 0.06x<sub>2</sub> + 0.02x<sub>3</sub> ,<br>
+      &nbsp; &nbsp;&nbsp; x<sub>2</sub> = 3 - 0.03x<sub>1</sub> + 0.05x<sub>3</sub> ,<br>
+      &nbsp; &nbsp;&nbsp; x<sub>3</sub> = 5 - 0.01x<sub>1</sub> + 0.02x<sub>2</sub> ;<br><br>
+		б)&nbsp; x<sub>1</sub> = 1.2 - 0.1x<sub>2</sub> - 0.1x<sub>3</sub> ,<br>
+      &nbsp; &nbsp;&nbsp; x<sub>2</sub> = 1.3 - 0.2x<sub>1</sub> - 0.1x<sub>3</sub> ,<br>
+      &nbsp; &nbsp;&nbsp; x<sub>3</sub> = 1.4 - 0.2x<sub>1</sub> - 0.2x<sub>2</sub> ;<br><br>
+    в)&nbsp; x<sub>1</sub> = 0.1x<sub>2</sub> - 0.2x<sub>3</sub> + 0.3x<sub>4</sub>,<br>
+      &nbsp; &nbsp;&nbsp; x<sub>2</sub> =  - 0.1x<sub>1</sub> + 0.1x<sub>3</sub> - 0.2x<sub>4</sub> + 0.5,<br>
+      &nbsp; &nbsp;&nbsp; x<sub>3</sub> =  - 0.1x<sub>1</sub> - 0.15x<sub>2</sub> + 0.05x<sub>4</sub> - 0.5,<br>
+      &nbsp; &nbsp;&nbsp; x<sub>4</sub> =  - 0.15x<sub>1</sub> - 0.1x<sub>2</sub> - 0.005x<sub>3</sub> + 0.75;<br><br>
+    г)&nbsp; x<sub>1</sub> = -0.2x<sub>2</sub> + 0.1x<sub>3</sub> - 0.2x<sub>4</sub> - 0.4,<br>
+      &nbsp; &nbsp;&nbsp; x<sub>2</sub> = 0.2x<sub>1</sub> - 0.2x<sub>3</sub> + 0.2,<br>
+      &nbsp; &nbsp;&nbsp; x<sub>3</sub> = 0.2x<sub>1</sub> - 0.4x<sub>2</sub> + 0.2x<sub>4</sub> - 0.4,<br>
+      &nbsp; &nbsp;&nbsp; x<sub>4</sub> = 0.333x<sub>1</sub> - 1.111;<br><br>
+    д)&nbsp; x<sub>1</sub> = 0.12x<sub>1</sub> - 0.18x<sub>2</sub> + 0.08x<sub>3</sub> - 0.64,<br>
+      &nbsp; &nbsp;&nbsp; x<sub>2</sub> = 0.15x<sub>1</sub> + 0.06x<sub>2</sub> - 0.11x<sub>3</sub> + 0.26,<br>
+      &nbsp; &nbsp;&nbsp; x<sub>3</sub> = 0.04x<sub>1</sub> - 0.1x<sub>2</sub> - 0.09x<sub>3</sub> + 1.34;<br><br>
+    е)&nbsp; x<sub>1</sub> - 0.1x<sub>2</sub> + 0.2x<sub>3</sub> = 0.3,<br>
+      &nbsp; &nbsp;&nbsp; 0.1x<sub>1</sub> + x<sub>2</sub> - 0.1x<sub>3</sub> - 0.1x<sub>4</sub> = - 0.2,<br>
+      &nbsp; &nbsp;&nbsp; -0.1x<sub>2</sub> + x<sub>3</sub> - 0.1x<sub>4</sub> = 0.1,<br>
+      &nbsp; &nbsp;&nbsp; -0.1x<sub>2</sub> + 0.1x<sub>3</sub> + x<sub>4</sub> = 0.2 ;<br><br>
+    ж)&nbsp; 5.92x<sub>1</sub> - 1.24x<sub>2</sub> - 1.84x<sub>3</sub> = 2.44 ,<br>
+      &nbsp; &nbsp;&nbsp; 2.72x<sub>1</sub> - 9.71x<sub>2</sub> + 2.43x<sub>3</sub> = 2.4,<br>
+      &nbsp; &nbsp;&nbsp; 1.76x<sub>1</sub> - 3.12x<sub>2</sub> + 9.38x<sub>3</sub> = 1.93.<br><br>
+  </ol>
+<br>
+	
+<a name="z741"><b>741 </b></a>Вычислить интегралы по формулам численного интегрирования и по формуле 
+Ньютона-Лейбница. Сравнить результаты:<br>
+&nbsp; &nbsp; &nbsp; а) <img src="image14.gif" align="middle">;
+
+&nbsp; &nbsp; &nbsp; б) <img src="image15.gif" align="middle">;
+
+&nbsp; &nbsp; &nbsp; в) <img src="image16.gif" align="middle">;<br>
+
+&nbsp; &nbsp; &nbsp; г) <img src="image17.gif" align="middle">;
+
+&nbsp; &nbsp; &nbsp; д) <img src="image18.gif" align="middle">.
+<br><br>
+
+<a name="z742"><b>742 </b></a>Дано действительное число &nbsp;&#949;. Вычислить интегралы с точностью &nbsp;&#949;. 
+В данной задаче вычисление с точностью &nbsp;&#949; означает следующее. Отрезок интегрирования разбивается на 
+n<sub>i</sub> равных частей и строится сумма <i><b>S</b><sub>n<sub>i</sub></sub></i>, котороя является 
+приближенным значением интеграла. Если выполняется условие |S<sub>n<sub>i+1</sub></sub> - S<sub>n<sub>i</sub></sub>|  
+< &#949;, S<sub>n<sub>i+1</sub></sub> считается значением интеграла с точностью &#949;. (Здесь n<sub>i</sub>  <  
+n<sub>i+1</sub> (i = 1, 2, ...).)<br>
+&nbsp; &nbsp; &nbsp; 
+а) <img src="image21.gif" align="middle">;&nbsp; &nbsp; &nbsp;
+б) <img src="image22.gif" align="middle">;&nbsp; &nbsp; &nbsp;
+в) <img src="image23.gif" align="middle">;&nbsp; &nbsp; &nbsp;
+г) <img src="image24.gif" align="middle">;<br><br>&nbsp; &nbsp; &nbsp;
+д) <img src="image25.gif" align="middle">;&nbsp; &nbsp; &nbsp;
+е) <img src="image26.gif" align="middle">;&nbsp; &nbsp; &nbsp;
+ж) <img src="image27.gif" align="middle">;&nbsp; &nbsp; &nbsp;
+з) <img src="image28.gif" align="middle">;<br><br>&nbsp; &nbsp; &nbsp;
+и) <img src="image29.gif" align="middle">;&nbsp; &nbsp; &nbsp;
+к) <img src="image30.gif" align="middle">;&nbsp; &nbsp; &nbsp;
+л) <img src="image31.gif" align="middle">;<br><br>&nbsp; &nbsp; &nbsp;
+м) <img src="image32.gif" align="middle">;&nbsp; &nbsp; &nbsp;
+н) <img src="image20.gif" align="middle">;&nbsp; &nbsp; &nbsp;
+о) <img src="image19.gif" align="middle">;<br><br>&nbsp; &nbsp; &nbsp;
+п) <img src="image12.gif" align="middle">.<br><br>
+&nbsp; &nbsp; &nbsp;Если удается с помощью формулы Ньютона-Лейбница найти точное значение интеграла, то полезно 
+сранить с ним результат приближенного вычисления.<br><br>
+
+<a name="z743"><b>743 </b></a>Вычислить длину эллипса по формуле <img src="image11.gif" align="middle">, 
+a = 30, b = 20 (a и b-полуоси эллипса), <img src="image02.gif" align="middle">.<br><br>
+
+<a name="z744"><b>744 </b></a>Вернуться к задаче 738. Найти приближенные значения интегралов функций y = f (x), 
+определенных в а) и б) с помощью уравнений вида F(x, y) = 0. Первая функция интегрируется на отрезке [-1,0], 
+вторая - на отрезке [1,2]. Вычисление интеграла следует начинать, разделив отрезок интегрирования на 5 частей. 
+Затем уточнить значение интеграла, уменьшая  шаг вдвое. Вычисление проводить с точностью 0.001. Значение 
+функции вычислять с точностью 0.00001.<br><br>
+
+<a name="z745"><b>745 </b></a>Дано действительное положительное число &nbsp;&#949;. Вычислить с точностью 
+&nbsp;&#949; площадь фигуры между дугами кривых:<br>
+&nbsp; &nbsp; &nbsp;
+а) y = sin x<sup>2</sup> + 2, y = e <sup>x<sup>2</sup></sup>;<br>&nbsp; &nbsp; &nbsp;
+б) y = 2<sup>x<sup>2</sup></sup>, y = cos x <sup>2</sup> + 1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Воспользоваться численными методами решения уравнений и интегрирования.<br><br>
+
+<a name="z746"><b>746 </b></a>Решить дифференциальное уравнение &nbsp; y<sup>'</sup> = f (x, y).
+После уравнения в скобках записаны исходные данные для решения: x<sub>0</sub> - начальное значиние аргумента, 
+y<sub>0</sub> - начальное  значение функции от x<sub>0</sub>, отрезок, на котором решается уравнение, h - шаг.
+<br>&nbsp; &nbsp; &nbsp;
+а) y&#1371 = x + cos( y/&#960 )&nbsp; &nbsp;(x<sub>0</sub>=1.7, y<sub>0</sub> = 5.3, [1.7, 5.2], h = 0.15);<br>
+&nbsp; &nbsp; &nbsp;
+б) <img src="image10.gif" align="middle">&nbsp; &nbsp;(x<sub>0</sub> = 1.8, y<sub>0</sub> = 4.5, 
+[1.8, 4.6], h = 0.1);<br>
+&nbsp; &nbsp; &nbsp;
+в) <img src="image09.gif" align="middle">&nbsp; &nbsp;(x<sub>0</sub> = 3, y<sub>0</sub> = 5, [3, 11.4], h = 0.3);<br>
+&nbsp; &nbsp; &nbsp;
+г) <img src="image08.gif" align="middle">&nbsp; &nbsp;(x<sub>0</sub> = 1, y<sub>0</sub> = 0.5, [1, 0.6], h = 0.005);<br>
+&nbsp; &nbsp; &nbsp;
+д) y&#1371 = 2x + sin( y/x )&nbsp; &nbsp;(x<sub>0</sub> = 0, y<sub>0</sub> = 1, [0, 1], h = 0.1);<br>
+&nbsp; &nbsp; &nbsp;
+е) <img src="image07.gif" align="middle">&nbsp; &nbsp;(x<sub>0</sub> = 0, y<sub>0</sub> = 0, [0, 1], h = 0.1);<br>
+&nbsp; &nbsp; &nbsp;
+ж) <img src="image06.gif" align="middle">&nbsp; &nbsp;(x<sub>0</sub> = 0, y<sub>0</sub> = 0, [0, 1], h = 0.1);<br>
+&nbsp; &nbsp; &nbsp;
+з) <img src="image04.gif" align="middle">&nbsp; &nbsp;(x<sub>0</sub> = 0, y<sub>0</sub> = 1, [0, 1], h = 0.01);<br>
+&nbsp; &nbsp; &nbsp;
+и) y &#1369 = x - y &nbsp; &nbsp;(x<sub>0</sub> = 0, y<sub>0</sub> = 0 , [0, 1], h = 0.05);<br>
+&nbsp; &nbsp; &nbsp;
+к) <img src="image03.gif" align="middle">&nbsp; &nbsp;(x<sub>0</sub> = 0, y<sub>0</sub> = 1, [0, 0.5], h = 0.05);<br>
+&nbsp; &nbsp; &nbsp;
+л) &nbsp;y<sup>'</sup> = 2xy &nbsp; &nbsp;(x<sub>0</sub> = 0, y<sub>0</sub> = 1, [0, 1], h = 0.025);<br>
+&nbsp; &nbsp; &nbsp;
+м) y &#1369 = 2x - 3y &nbsp; &nbsp;(x<sub>0</sub> = 0, y<sub>0</sub> = 0, [0, 1], h = 0.1);<br>
+&nbsp; &nbsp; &nbsp;
+н) <img src="image01.gif" align="middle">&nbsp; &nbsp;(x<sub>0</sub> = 0.8, y<sub>0</sub> = 3.8, 
+[0.8, 5.0], h = 0.15).<br><br>
+<hr>
+*) Когда заходит речь о "вычислении с точностью &#949;", следует иметь ввиду, что лишь немногмие чисенные методы, 
+основанные на построении последовательных приближений x<sub>0</sub>, x<sub>1</sub>, ... к искомому числу х, 
+гарантируют, подобно методу деления отрезка пополам, что абсолютная погрешность найденного значения будет меньше 
+&#949;. Будем считать, что требуемая точность &#949; достигнута, как только получено такое x<sub>m</sub> (при m > 1), 
+для которого |x<sub>m</sub> - x<sub>m-1</sub>| < &#949;. В данной задаче предполагается, что в программе будет 
+реализован именно этот подход к оценке точности. 
+</ol>
+
+<table noborder width="100%">
+ <tr>
+  <td align="left">  <font size="5"><a href="..\Glava21\index21.htm#Glava21"><img border="0" src="..\Files\arrow_l.gif">Предыдущая глава</a></font></td>
+  <td align="center"><font size="5"><a href="#Glava22">К началу</a></font></td>
+  <td align="right"> <font size="5"><a href="..\Glava23\index23.htm#Glava23">Следующая глава<img border="0" align="middle" src="..\Files\arrow_r.gif"></a></font></td>
+ </tr>
+</table>
+
+</body>
+</html>
