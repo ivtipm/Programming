@@ -1,6 +1,7 @@
 # Programming
 
-Задачник: https://ivtipm.github.io/Programming/Files/spisocall.htm\
+Задачник: https://ivtipm.github.io/Programming/Files/spisocall.htm
+
 Пропускайте задачи из строк: 2, 4, 11, 15, 23, 27
 
 ### Программы и сайты:
