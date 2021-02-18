@@ -70,6 +70,7 @@
 
 
 ## Программы и сайты:
+- sublime text 3 -- текстовый редактор
 - Delphi 7
 - PascalABC.NET
 - [Draw.io](https://app.diagrams.net) -- для рисования диаграмм
