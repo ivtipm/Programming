@@ -37,6 +37,7 @@
 11. Конструкторы. Деструкторы. 
 
 ### [Темы курсовых работ](https://github.com/ivtipm/Programming/blob/master/course_work.md)
+### [Конспект пппо списам](Списки.docx)
 
 # Семестр 1
 
