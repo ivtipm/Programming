@@ -85,7 +85,9 @@
 
 
 ## Программы и сайты:
-- sublime text 3 -- текстовый редактор
+- [sublime text 3](https://www.sublimetext.com/3) -- текстовый редактор
 - Delphi 7
+- [Lazarus](https://www.lazarus-ide.org/)
+- [Rad Studio](https://www.embarcadero.com/ru/products/rad-studio)
 - PascalABC.NET
 - [Draw.io](https://app.diagrams.net) -- для рисования диаграмм
