@@ -56,7 +56,7 @@
   Сохраняйте диаграммы в формате drawio.
   Перед диаграммой приведите номер задачи, условие и свою фамилию.
 
-**Октябрь**
+**Октябрь 2020**
 - Решение задач согласно пройденным темам
 - Сохраняйте задачу в виде файлов исходных и и виде pdf файлов
 - pdf файл должен включать:
@@ -80,3 +80,4 @@
 - [Rad Studio](https://www.embarcadero.com/ru/products/rad-studio)
 - PascalABC.NET
 - [Draw.io](https://app.diagrams.net) -- для рисования диаграмм
+- [wolframalpha](https://www.wolframalpha.com), [примеры](wolframalpha.md)
