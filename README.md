@@ -111,10 +111,10 @@
 
 
 ## Программы и сайты:
-- [sublime text 3](https://www.sublimetext.com/3) -- текстовый редактор
+- [sublime text 3](https://www.sublimetext.com/3), Atom, Visual studio code -- текстовые редакторы для программистов
 - Delphi 7
-- [Lazarus](https://www.lazarus-ide.org/)
-- [Rad Studio](https://www.embarcadero.com/ru/products/rad-studio)
+- [Lazarus](https://www.lazarus-ide.org/) -- свободная копия Delphi
+- [Rad Studio](https://www.embarcadero.com/ru/products/rad-studio) -- современнай среда разработки для Delphi
 - PascalABC.NET
 - [Draw.io](https://app.diagrams.net) -- для рисования диаграмм
 - [wolframalpha](https://www.wolframalpha.com), [примеры](wolframalpha.md)
