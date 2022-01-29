@@ -118,3 +118,8 @@
 - PascalABC.NET
 - [Draw.io](https://app.diagrams.net) -- для рисования диаграмм
 - [wolframalpha](https://www.wolframalpha.com), [примеры](wolframalpha.md)
+
+
+
+### Дополнительно
+- Как улучшить блок-схемы алгоритмов https://habr.com/ru/post/541478/ 
