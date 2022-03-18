@@ -119,7 +119,13 @@
 - [Draw.io](https://app.diagrams.net) -- для рисования диаграмм
 - [wolframalpha](https://www.wolframalpha.com), [примеры](wolframalpha.md)
 
-
+## Источники
+- http://pascalabc.net/books
+- Turbo Pascal 7.0. Начальный курс | Фаронов В. В. 2000 г.
+- http://intuit.valrkl.ru/course-1265/index.html - Программирование на Lazarus
+- http://www.freepascal.ru/download/pdf/osnovy_programmirovanija_v_srede_lazarus.pdf - Основы программирования
+в среде Lazarus
+- https://www.youtube.com/watch?v=VWHec3Fwuck - Уроки программирования в Lazarus
 
 ### Дополнительно
 - Как улучшить блок-схемы алгоритмов https://habr.com/ru/post/541478/ 
