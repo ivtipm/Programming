@@ -122,6 +122,7 @@
 ## Источники
 - http://pascalabc.net/books
 - Turbo Pascal 7.0. Начальный курс | Фаронов В. В. 2000 г.
+- Алексей Архангельский: Язык Pascal и основы программирования в Delphi
 - http://intuit.valrkl.ru/course-1265/index.html - Программирование на Lazarus
 - http://www.freepascal.ru/download/pdf/osnovy_programmirovanija_v_srede_lazarus.pdf - Основы программирования
 в среде Lazarus
