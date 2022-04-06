@@ -1,0 +1,26 @@
+object Form_main: TForm_main
+  Left = 613
+  Height = 498
+  Top = 201
+  Width = 764
+  Caption = 'Form_main'
+  ClientHeight = 498
+  ClientWidth = 764
+  LCLVersion = '2.2.0.4'
+  object Button_gen: TButton
+    Left = 24
+    Height = 25
+    Top = 8
+    Width = 160
+    Caption = 'Придумать студентов'
+    OnClick = Button_genClick
+    TabOrder = 0
+  end
+  object Memo: TMemo
+    Left = 24
+    Height = 420
+    Top = 57
+    Width = 704
+    TabOrder = 1
+  end
+end
