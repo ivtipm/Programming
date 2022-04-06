@@ -32,7 +32,8 @@ implementation
         for i:=1 to n do
           begin
             s.grade := 3 + random(20) / 10;
-            s.name := 'Ivanov ' + IntToStr(random(100000)) + ' ' + IntToStr(random(100000));
+            // вместо обычных Фамилии и Имени придумаем Фамилию и Имя похожие на такие: Ivanov123456 465987
+            s.name := 'Ivanov ' + IntToStr(random(100000)) + ' ' + IntToStr(random(100000));    
             studs[i] := s;
           end;
     end;
