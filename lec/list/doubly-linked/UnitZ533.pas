@@ -4,8 +4,10 @@ unit UnitZ533;
 interface
 
   uses SysUtils, Dialogs;
+
   type
    PUzel = ^Zp2;
+   
    Zp2 = record
          x: real;
          next: PUzel;
@@ -50,7 +52,7 @@ implementation
      f:= nil;
      repeat
       new(a);
-      a^.x := StrToFloat(InputBox('Введите реальное число',' ',' '));
+      a^.x := StrToFloat(InputBox('Введите действительное число',' ',' '));
       a^.next := nil;
       if (f = nil) then
          begin

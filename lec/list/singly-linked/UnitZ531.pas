@@ -48,7 +48,7 @@ implementation
      f:= nil;
      repeat
       new(a);
-      a^.x := StrToFloat(InputBox('Введите реальное число',' ',' '));
+      a^.x := StrToFloat(InputBox('Введите действительное число',' ',' '));
       a^.next := nil;
       if (f = nil) then
          begin
