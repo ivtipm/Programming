@@ -1,4 +1,5 @@
 unit UnitZ531;
+// Односвязные списки
 
 interface
   uses SysUtils, Dialogs;
@@ -137,5 +138,5 @@ implementation
        Dispose(a);
       end;
     end;
-    
+
 end.
