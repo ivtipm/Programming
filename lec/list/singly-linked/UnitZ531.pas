@@ -2,39 +2,43 @@ unit UnitZ531;
 
 interface
   uses SysUtils, Dialogs;
+  
   type
    PUzel = ^Zp;
+
    Zp = record
          x: real;
          next: PUzel;
         end;
+
    FZap = file of real;
-    {Операции для работы с односвязанным списком }
-   procedure AddFirst(var f: PUzel; a: PUzel);{Вставить узел a первым в список}
-   procedure AddAfter(var old:PUzel; a: PUzel);{Вставить узел a после old}
-   {Построить список; f -указатель на голову списка}
-   procedure BuildSpisok(var f: PUzel);
-   {Вывод списка в текстовый файл}
-   procedure WriteSpText(var f: PUzel;var ftxt:Text);
-   {Создать из существующего списка новый}
-   procedure NewSpisok(var f: PUzel; var fn: PUzel);
-   {Выделить из списка первый узел и вернуть его пользователю}
-   procedure DelFirstElement(var f,a: PUzel);
-   {Выделить из списка узел,следующий за узлом old и вернуть его пользователю}
-   procedure DelElement(var old,a: PUzel);
-   procedure DelSpisok(var f: PUzel);  //Удалить список
-   function EndElemSp(var f: PUzel):real; //Значение последнего  элем. в списке
+
+   {РћРїРµСЂР°С†РёРё РґР»СЏ СЂР°Р±РѕС‚С‹ СЃ РѕРґРЅРѕСЃРІСЏР·Р°РЅРЅС‹Рј СЃРїРёСЃРєРѕРј }
+   procedure AddFirst(var f: PUzel; a: PUzel);          {Р’СЃС‚Р°РІРёС‚СЊ СѓР·РµР» a РїРµСЂРІС‹Рј РІ СЃРїРёСЃРѕРє}
+   procedure AddAfter(var old:PUzel; a: PUzel);         {Р’СЃС‚Р°РІРёС‚СЊ СѓР·РµР» a РїРѕСЃР»Рµ old}
+   procedure BuildSpisok(var f: PUzel);                 {РџРѕСЃС‚СЂРѕРёС‚СЊ СЃРїРёСЃРѕРє; f -СѓРєР°Р·Р°С‚РµР»СЊ РЅР° РіРѕР»РѕРІСѓ СЃРїРёСЃРєР°}
+   procedure WriteSpText(var f: PUzel;var ftxt:Text);   {Р’С‹РІРѕРґ СЃРїРёСЃРєР° РІ С‚РµРєСЃС‚РѕРІС‹Р№ С„Р°Р№Р»}
+   procedure NewSpisok(var f: PUzel; var fn: PUzel);    {РЎРѕР·РґР°С‚СЊ РёР· СЃСѓС‰РµСЃС‚РІСѓСЋС‰РµРіРѕ СЃРїРёСЃРєР° РЅРѕРІС‹Р№}
+   procedure DelFirstElement(var f,a: PUzel);           {Р’С‹РґРµР»РёС‚СЊ РёР· СЃРїРёСЃРєР° РїРµСЂРІС‹Р№ СѓР·РµР» Рё РІРµСЂРЅСѓС‚СЊ РµРіРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»СЋ}
+   procedure DelElement(var old,a: PUzel);              {Р’С‹РґРµР»РёС‚СЊ РёР· СЃРїРёСЃРєР° СѓР·РµР»,СЃР»РµРґСѓСЋС‰РёР№ Р·Р° СѓР·Р»РѕРј old Рё РІРµСЂРЅСѓС‚СЊ РµРіРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»СЋ}
+   procedure DelSpisok(var f: PUzel);                   // РЈРґР°Р»РёС‚СЊ СЃРїРёСЃРѕРє
+   function EndElemSp(var f: PUzel):real;               // Р—РЅР°С‡РµРЅРёРµ РїРѕСЃР»РµРґРЅРµРіРѕ  СЌР»РµРј. РІ СЃРїРёСЃРєРµ
+
+
 implementation
+
    procedure AddFirst(var f: PUzel; a: PUzel);
     begin
      a^.next := f;
      f:=a;
     end;
+
    procedure AddAfter(var old:PUzel; a: PUzel);
     begin
      a^.next := old^.next;
      old^.next := a;
     end;
+
    procedure BuildSpisok(var f: PUzel);
     var
      a,d :PUzel;
@@ -43,7 +47,7 @@ implementation
      f:= nil;
      repeat
       new(a);
-      a^.x := StrToFloat(InputBox('Введите реальное число',' ',' '));
+      a^.x := StrToFloat(InputBox('Р’РІРµРґРёС‚Рµ СЂРµР°Р»СЊРЅРѕРµ С‡РёСЃР»Рѕ',' ',' '));
       a^.next := nil;
       if (f = nil) then
          begin
@@ -55,9 +59,10 @@ implementation
           AddAfter(d,a);
           d := a;
          end;
-      ch:= InputBox('Для завершения ввода нажмите Y',' ',' ')[1];
+      ch:= InputBox('Р”Р»СЏ Р·Р°РІРµСЂС€РµРЅРёСЏ РІРІРѕРґР° РЅР°Р¶РјРёС‚Рµ Y',' ',' ')[1];
      until (ch = 'Y') or (ch ='y');    
     end;
+
    procedure WriteSpText(var f: PUzel; var ftxt:Text);
     var
      p: PUzel;
@@ -73,6 +78,7 @@ implementation
        p:= p^.next;
       end;
     end;
+
    function EndElemSp(var f: PUzel):real;
      var
       p: PUzel;
@@ -106,19 +112,22 @@ implementation
        p:=p^.next;
       end;
     end;
+
    procedure DelFirstElement(var f,a: PUzel);
     begin
       a := f;
       f := f^.next;
       a^.next := nil;
     end;
+
    procedure DelElement(var old,a: PUzel);
     begin
      a := old^.next;
      old^.next := a^.next;
      a^.next := nil;
     end;
-   procedure DelSpisok(var f: PUzel);  //Удалить список
+
+   procedure DelSpisok(var f: PUzel);  //РЈРґР°Р»РёС‚СЊ СЃРїРёСЃРѕРє
     var
      a: PUzel;
     begin
@@ -128,4 +137,5 @@ implementation
        Dispose(a);
       end;
     end;
+    
 end.

@@ -56,7 +56,7 @@ end;
 
 procedure TForm1.WriteSpTextFile1Click(Sender: TObject);
 begin
-  writeln(ftxt,'Содержимое двусвязанного списка ');
+  writeln(ftxt,'РЎРѕРґРµСЂР¶РёРјРѕРµ РґРІСѓСЃРІСЏР·Р°РЅРЅРѕРіРѕ СЃРїРёСЃРєР° ');
   WriteSpText(Sp1,ftxt);
   writeln(ftxt,' ')
 end;
@@ -70,7 +70,7 @@ end;
 procedure TForm1.Sum1Click(Sender: TObject);
 begin
  writeln(ftxt, ' ');
- write(ftxt,'Искомая сумма равна = ');
+ write(ftxt,'РСЃРєРѕРјР°СЏ СЃСѓРјРјР° СЂР°РІРЅР° = ');
  writeln( ftxt,SumElemSp(Sp1):7:2);
 end;
 

@@ -63,7 +63,7 @@ procedure TForm1.WriteTxtFile1Click(Sender: TObject);
   n: integer;
   p: PUzel;
 begin
-  n:= StrToInt(InputBox('Для нач-го списка n=1, для результата n=2',' ',' '));
+  n:= StrToInt(InputBox('Р”Р»СЏ РЅР°С‡-РіРѕ СЃРїРёСЃРєР° n=1, РґР»СЏ СЂРµР·СѓР»СЊС‚Р°С‚Р° n=2',' ',' '));
   if (n=1) then p:=Sp1 else p:=Sp2;
   if (n = 1) then writeln(ftxt,'Begin spisok')
            else writeln(ftxt,'Rezult spisok');
