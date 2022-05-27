@@ -1,4 +1,4 @@
-unit Unit506;
+unit List506;
 
 interface
  uses SysUtils, Dialogs;
