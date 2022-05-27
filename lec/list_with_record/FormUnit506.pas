@@ -1,4 +1,4 @@
-unit U506;
+unit FormUnit506;
 
 interface
 
