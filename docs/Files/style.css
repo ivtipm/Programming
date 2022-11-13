@@ -10,6 +10,8 @@ body {
     background-attachment:fixed;
     font-family: Roboto, sans-serif;
     font-size: 24px;	
+	  margin-left: 50px;
+	   width: 1600px;
 }
 
 
@@ -37,6 +39,12 @@ table, th, td {
   text-align: right;
 	padding: 8px;
 }
+
+/* ссылка в ячейке с темой должна занимать всю ячейку */
+.table_theme_title a{
+	display: block;
+}
+
 
 /* строка для разделения разделов в таблице */
 .white_row{
@@ -73,6 +81,11 @@ A:visited {
            color:#000000; 
       	  }
 
+/* ссылка в ячейке с номером должна занимать всю ячейку */
+td .taskNum{
+	display: block;
+}
+
 .taskNum:hover {
          text-decoration:none; 
          font-weight:bold;
@@ -83,7 +96,7 @@ A:hover {
          /*text-decoration:none; */
          /*font-weight:bold;*/
       	 color: var(--accent-color); 
-	       text-decoration: underline;
+/* 	       text-decoration: underline; */
 /*          font-weight: bold; */
 }
 
@@ -232,8 +245,8 @@ th:hover::after {
 
 a:target {
   /*background*/: #d8d8d8;
-  font-size: 24px;
-  color: #990000;
+  font-size: 30px;
+  color: var(--accent-color);
 }
 
 
