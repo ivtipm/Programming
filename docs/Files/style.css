@@ -1,3 +1,11 @@
+
+
+:root{
+/* 	цвет для выделений (по-умолчанию - фирменный цвет ЗабГУ) */
+	--accent-color: #094882;
+}
+
+
 body {
     background-attachment:fixed;
     font-family: Roboto, sans-serif;
@@ -26,8 +34,13 @@ table, th, td {
 
 
 .table_theme_title{
-  text-align: left;	
+  text-align: right;
+	padding: 8px;
 }
+
+/* строка для разделения разделов в таблице */
+.white_row{
+	height: 6px;}
 
 .styletable{
             /*border-style:solid;*/
@@ -63,13 +76,16 @@ A:visited {
 .taskNum:hover {
          text-decoration:none; 
          font-weight:bold;
-      	 color: #990000; }
+      	 color: var(--accent-color); }
 
 
 A:hover {
          /*text-decoration:none; */
          /*font-weight:bold;*/
-      	 color: #990000; }
+      	 color: var(--accent-color); 
+	       text-decoration: underline;
+/*          font-weight: bold; */
+}
 
 .heed {
 			 font-size:22px;
