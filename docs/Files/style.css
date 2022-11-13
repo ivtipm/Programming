@@ -24,6 +24,11 @@ table, th, td {
     border: 0px solid black;
 }
 
+
+.table_theme_title{
+  text-align: left;	
+}
+
 .styletable{
             /*border-style:solid;*/
             /*border: 1px solid black;*/
