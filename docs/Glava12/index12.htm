@@ -4,6 +4,15 @@
 <title>Использование процедур</title> 
 <meta http-equiv = "content-type" content = "text/html; charset =utf-8">
 <link rel="stylesheet" type="text/css" href="..\Files\style.css">
+
+<!-- Для рендеринга latex формул -->
+<!-- см. пример в 427 -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+
+
 </head>
 
 <body BACKGROUND="../Files/foni.gif">
@@ -20,7 +29,10 @@
 
 <a name = "z426"><b>426 </a></b>Дано действительное число y. Получить<br><img src = "image03.gif">.<br><br>
 
-<a name = "z427"><b>427 </a></b>Даны действительные числа a,  b,  c. Получить<br><img src = "image04.gif">.<br><br>
+<a name = "z427"><b>427 </a></b>Даны действительные числа a,  b,  c. Получить<br>
+<!-- <img src = "image04.gif"> -->
+<p>\( \frac{max(a,\;a+b)\;+\;max(a,\;bc)}{1\;+\;max(a+bc,\;1.15)} \)</p>
+<br>
 
 <a name = "z428"><b>428 </a></b>Даны действительные числа a,  b. Получить <i>u</i> = min (<i>ab, a + b</i>), 
 min(<i>u + u<sup>2</sup></i>, 3.14).<br><br>
