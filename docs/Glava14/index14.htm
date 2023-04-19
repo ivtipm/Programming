@@ -4,6 +4,12 @@
 <title>Вычисления с хранением последовательностей,  число членов которых зависит от исходных данных</title>
 <meta http-equiv = "content-type" content = "text/html; charset =utf-8">
 <link rel="stylesheet" type="text/css" href="..\Files\style.css">
+
+<!-- Для рендеринга latex формул -->
+<!-- см. пример в 534 -->
+<script src="../js/polyfill.min.js"></script>
+<script id="MathJax-script" async src="../js/tex-mml-chtml.js"> </script>
+
 </head>
 
 <body BACKGROUND="../Files/foni.gif">
@@ -41,8 +47,10 @@ x<sub>n-1</sub> - x<sub>n</sub>.<br><dl>Для решения этой зада�
 		   (a<sub>2n-1</sub>-a<sub>2</sub>);<br>
 	  б) a<sub>1</sub>a<sub>2n</sub> + a<sub>2</sub>a<sub>2n-1</sub> +...+ a<sub>n</sub>a<sub>n+1</sub>;<br>
   	в) min(a<sub>1</sub> + a<sub>n+1</sub>, a<sub>2</sub> + a<sub>n+2</sub>, ..., a<sub>n</sub> + a<sub>2n</sub>);<br>
-	  г) max(min(a<sub>1</sub>, a<sub>2n</sub>), min(a<sub>2</sub>, a<sub>2n-1</sub>), min(a<sub>n</sub>) + 
-		   a<sub>2n</sub>)).
+    <p>г) \( \max \\( \min(a_1, a_{2n}), \min(a_2, a_{2n-1}), ..., \min(a_{n}, a_{n+1}) \\) \)</p>
+
+	  <!-- max(min(a<sub>1</sub>, a<sub>2n</sub>), min(a<sub>2</sub>, a<sub>2n-1</sub>), min(a<sub>n</sub>) + 
+		   a<sub>2n</sub>)). -->
   </ol>
 <br>
 
