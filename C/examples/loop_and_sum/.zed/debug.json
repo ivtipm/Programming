@@ -1,0 +1,10 @@
+[
+  {
+    "label": "Debug current C file",
+    "adapter": "CodeLLDB",
+    "request": "launch",
+    "program": "$ZED_DIRNAME/$ZED_STEM",
+    "cwd": "$ZED_DIRNAME",
+    "build": "Build current C file"
+  }
+]

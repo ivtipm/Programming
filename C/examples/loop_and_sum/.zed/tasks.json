@@ -1,0 +1,28 @@
+[
+  {
+    "label": "Build current C file",
+    "command": "clang",
+    "args": [
+      "-lm",
+      "-std=c23",
+      "-Wall",
+      "-Wextra",
+      "-g",
+      "$ZED_FILE",
+      "-o",
+      "$ZED_DIRNAME/$ZED_STEM"
+    ],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "tags": ["build"]
+  },
+  {
+    "label": "Build and run current C file",
+    "command": "sh",
+    "args": [
+      "-c",
+      "clang -lm -std=c23 -Wall -Wextra -g \"$ZED_FILE\" -o \"$ZED_DIRNAME/$ZED_STEM\" && \"$ZED_DIRNAME/$ZED_STEM\""
+    ],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "tags": ["build", "run"]
+  }
+]
