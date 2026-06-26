@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <time.h>
 
 
@@ -15,11 +16,13 @@
 // Общий вид объявления массива
 // тип_элемента_массива индентификатор [ количество элементов ];
 
-int Arr[ N ];
-// Arr: array of integer [10] // пример из Паскаля
+
 
 
 int main(){
+
+    int Arr[ N ];
+    // Arr: array of integer [10] // пример из Паскаля
 
     // нумерация элементов массива начинается с 0
     Arr[0] = 0;
@@ -38,7 +41,7 @@ int main(){
     printf("time  = %ld\n", time(0) );     //
 
     // Инициализация генератора псевдослучайных чисел c помощью текущего времени в секундах
-    srand( time(0) );
+    srand( time(0) );   // seed rand
 
     // заполнение массива случайными числами в диапазоне от 0 до 100 включительно
     for (unsigned int i = 0; i < N; i++){
@@ -47,7 +50,33 @@ int main(){
 
     // Вывод массива
     for (unsigned int i = 0; i < N; i++){
-        printf("%d  ", Arr[i] );
+        printf("%3d ", Arr[i] );
+
+        if ( i % 10 == 9 )
+            puts("");
+    }
+
+    int Arr2[ N ];
+
+    // неправильный способ копирования массива
+    // Arr2 = Arr;
+
+    // Правильный способ копирования массивов
+    // for (unsigned int i = 0; i < N; i++){
+    //     Arr2[i] = Arr[i];
+    // }
+
+    // более быстрой способ копирования массива
+    memcpy( Arr2, Arr,  sizeof(int) * N );
+
+    puts("");
+    puts("Arr2");
+    // Вывод массива
+    for (unsigned int i = 0; i < N; i++){
+        printf("%3d ", Arr2[i] );
+
+        if ( i % 10 == 9 )
+            puts("");
     }
 
 
