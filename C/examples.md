@@ -108,7 +108,7 @@ int main() {
 }
 ```
 
-См. также - настройка кодировки выводимых символов и локали: https://github.com/VetrovSV/OOP/blob/master/C/locale_encoding.md
+См. также - настройка кодировки выводимых символов и локали: https://github.com/VetrovSV/OOP/blob/master/C/studbook/locale_encoding.md
 
 
 # Компилирование в консоли (компилятор GCC)
