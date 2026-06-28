@@ -169,7 +169,7 @@ _Темы для самостоятельного изучения отмече�
 - *Предопределённые макросы: `__FILE__, __LINE__, __DATE__, __TIME__, __STDC__, __STDC_VERSION__`*
 - *#error и #warning*
 - *#pragma и расширения компилятора*
-https://github.com/VetrovSV/OOP/blob/master/C/studbook/preprocessing.md
+https://github.com/ivtipm/Programming/blob/master/C/studbook/preprocessing.md
 
 
 ## 11. Связные списки
