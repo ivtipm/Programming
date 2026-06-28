@@ -9,7 +9,7 @@
 body {
     background-attachment:fixed;
     font-family: Roboto, sans-serif;
-    font-size: 24px;	
+    font-size: 24px;
 	  margin-left: 50px;
 /*     width: 1600px; */
 }
@@ -19,7 +19,7 @@ body {
 .run {
 		  src:"off.gif";
 			width:9;
-		  height:9; 
+		  height:9;
 		 }
 
 dl {
@@ -54,31 +54,31 @@ table, th, td {
             /*border-style:solid;*/
             /*border: 1px solid black;*/
 			/*border-width:thin;*/
-			width:90%;}	 		 
+			width:90%;}
 
 .styleit {
 				  font-style:italic;
           font-size:13pt;
    			  font-weight:bold;
-				 }	
-		 
+				 }
+
 .bignum {
          font-size:16pt;
          font-style:normal;
 				 font-variant:normal;
 				 font-weight:normal;
-				 letter-spacing: 0.15em; 
+				 letter-spacing: 0.15em;
 		background: #AAA
-				} 
+				}
 
 A:link {
-        text-decoration:none; 
-	      color:#000000; 
+        text-decoration:none;
+	      color:#000000;
        }
 
 A:visited {
-           text-decoration:none; 
-           color:#000000; 
+           text-decoration:none;
+           color:#000000;
       	  }
 
 /* ссылка в ячейке с номером должна занимать всю ячейку */
@@ -87,7 +87,7 @@ td .taskNum{
 }
 
 .taskNum:hover {
-         text-decoration:none; 
+         text-decoration:none;
          font-weight:bold;
       	 color: var(--accent-color); }
 
@@ -95,7 +95,7 @@ td .taskNum{
 A:hover {
          /*text-decoration:none; */
          /*font-weight:bold;*/
-      	 color: var(--accent-color); 
+      	 color: var(--accent-color);
 /* 	       text-decoration: underline; */
 /*          font-weight: bold; */
 }
@@ -103,47 +103,47 @@ A:hover {
 .heed {
 			 font-size:22px;
 			 color:red;
-			}										
-				
+			}
+
 .date {
-			 letter-spacing:0.1 em; 
+			 letter-spacing:0.1 em;
 			 font-style:italic;
 			 font-weight:bold;
-       font-variant:normal;			  
+       font-variant:normal;
 			 font-size:30px;
 			 color:blue;
 			}
-			
+
 .spiski {
   			 font-style:italic;
 			 	 font-weight:bold;
-       	 font-variant:normal;			  
+       	 font-variant:normal;
 			 	 font-size:17px;
 			 	 color:blue;
-				}							
+				}
 
 #usesoft {
-				  text-indent:4 em;				  
+				  text-indent:4 em;
 				 }
 
 #email {
-			  text-align:center;			  
+			  text-align:center;
 			 }
 
 #blag {
-			 font-size:16px;			 
+			 font-size:16px;
 			}
-								
+
 div {
     font-style:normal;
 	font-variant:normal;
 	font-weight:normal;
-    text-align:left; 
+    text-align:left;
     }
 
 .activ {
 			  font-weight:bold;
- 	  	  font-size:17px;			 
+ 	  	  font-size:17px;
 			 }
 
 
@@ -153,17 +153,17 @@ div {
 /* Список разделов задачника%: Семестры, Летняя практика, ...*/
 .typespisoc {
 	text-align:center;
-	font-size:20px;	
+	font-size:20px;
 }
 
 
 .typespisoc li{
 		margin: 0 auto;
-	
+
 	list-style-type: none;
 	border: 1px solid #aaa;
 	margin-bottom: 1em;
-	
+
 	width: 400px;
 }
 
@@ -189,7 +189,7 @@ div {
 	border: 1px solid gray;
 }
 
-		
+
 .nad {
       font-style:normal;
 	    font-variant:normal;
@@ -202,7 +202,7 @@ div {
 	    font-variant:normal;
  	  	font-weight:normal;
       text-decoration:underline;
-     }		 
+     }
 
 .pere {
        font-style:normal;
@@ -210,11 +210,11 @@ div {
  	     font-weight:normal;
        text-decoration:line-through;
       }
-		 
+
 
 
 img {
-     border:0; 
+     border:0;
     }
 
 tbody:nth-child(odd) {
@@ -222,7 +222,7 @@ tbody:nth-child(odd) {
 }
 
 tbody:hover td[rowspan], tr:hover td {
-   background: #bab6b6; 
+   background: #bab6b6;
 }
 
 td:hover::after,
@@ -253,4 +253,11 @@ a:target {
 p {
 /*     font-family: "Times New Roman", Times, serif; */
 /*     font-size: 24px; */
+}
+
+
+/*Примечаение в тексте*/
+.note{
+    font-style: italic;
+    font-size: 1.2rem;
 }
