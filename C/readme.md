@@ -237,6 +237,6 @@ https://github.com/VetrovSV/OOP/blob/master/C/studbook/preprocessing.md
 # [Задания](tasks.md)
 
 ## Ссылки
-- [Примеры](examples.md)
+- [Примеры](studbook/examples.md)
 - Шпаргалка по языку С. План учебной практики: [excalidraw](c_language.excalidraw), [png](c_language.excalidraw.png)
 - [Рекомендации и требования по написанию кода](../criteria.md)
