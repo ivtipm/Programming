@@ -29,12 +29,12 @@ _Темы для самостоятельного изучения отмече�
     1. *git и github (для самостоятельного изучения)*
     1. Visual Studio Community https://visualstudio.microsoft.com/\
     Об установке: https://learn.microsoft.com/en-us/cpp/build/vscpp-step-0-installation?view=msvc-170
-    1. [Настройка компилятора вручную](examples.md#настройка-компилятора-и-компиляция-для-vs-code-или-для-компиляции-из-командной-строки)
+    1. [Настройка компилятора вручную](studbook/examples.md#настройка-компилятора-и-компиляция-для-vs-code-или-для-компиляции-из-командной-строки)
     1. Минималистичная онлайн-IDE
        - с отладчиком (может быть недоступен в РФ): [onlinegdb.com](https://www.onlinegdb.com/)
        - без отладчика: [codechef.com/ide](https://www.codechef.com/ide)
     1. [CodeBlocks](https://www.codeblocks.org/). Версия с `mingw` в названии, например [codeblocks-25.03mingw-setup.exe](https://sourceforge.net/projects/codeblocks/files/Binaries/25.03/Windows/codeblocks-25.03mingw-setup.exe/download) уже содержит в себе компилятор.
-3. [Пример минимальной программы](examples.md#hello-world)
+3. [Пример минимальной программы](studbook/examples.md#hello-world)
     - Структура программы: главная функция, где объявлять переменные, где писать операторы, как подключать модули.
     - Комментарии. Многострочные и однострочные.
     - Рекомендуемая логическая структура программы.

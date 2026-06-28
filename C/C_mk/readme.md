@@ -13,7 +13,7 @@
     <img src="../assets/vs_installer_cpp.png">
     </details>
 
-    3. [Настройка компилятора вручную](../examples.md#настройка-компилятора-и-компиляция-для-vs-code-или-для-компиляции-из-командной-строки)
+    3. [Настройка компилятора вручную](../studbook/examples.md#настройка-компилятора-и-компиляция-для-vs-code-или-для-компиляции-из-командной-строки)
     4. Минималистичная онлайн-IDE
        - с отладчиком (может быть недоступен в РФ): [onlinegdb.com](https://www.onlinegdb.com/)
        - без отладчика: [codechef.com/ide](https://www.codechef.com/ide)
@@ -201,7 +201,7 @@ https://github.com/ivtipm/Programming/blob/master/C/studbook/preprocessing.md
 
 
 ## Ссылки
-- [Примеры](../examples.md)
+- [Примеры](../studbook/examples.md)
 - Шпаргалка по языку С. [excalidraw](../c_language.excalidraw), [png](../c_language.excalidraw.png) 
 - [Рекомендации и требования по написанию кода](../../criteria.md)
 - [Задания](tasks.md)
