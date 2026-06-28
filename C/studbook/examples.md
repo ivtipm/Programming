@@ -108,7 +108,7 @@ int main() {
 }
 ```
 
-См. также - настройка кодировки выводимых символов и локали: https://github.com/VetrovSV/OOP/blob/master/C/studbook/locale_encoding.md
+См. также - настройка кодировки выводимых символов и локали: https://github.com/ivtipm/Programming/blob/master/C/studbook/locale_encoding.md
 
 
 # Компилирование в консоли (компилятор GCC)
@@ -779,4 +779,3 @@ int main() {
 
 **Документация**
 1. Перечень модулей (заголовочных файлов) стандартной библиотеки: https://en.cppreference.com/w/c/header.html
-
