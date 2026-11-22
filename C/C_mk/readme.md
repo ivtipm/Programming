@@ -3,6 +3,7 @@
 ## 1. Введение в язык С
 1. Язык С. Характеристика языка. [c_language.excalidraw](../c_language.excalidraw) [c_language.excalidraw.png](../c_language.excalidraw.png)
 2. Понятие среды разработки (IDE) и её основные компоненты. Панели. Запуск и сборка. Режимы запуска и сборки.
+    1. [CodeBlocks](https://www.codeblocks.org/). Версия с `mingw` в названии, например [codeblocks-25.03mingw-setup.exe](https://sourceforge.net/projects/codeblocks/files/Binaries/25.03/Windows/codeblocks-25.03mingw-setup.exe/download) уже содержит в себе компилятор.
     1. VS Code. Расширение: C\C++ Extension pack. Терминал.\
     Скачать: https://code.visualstudio.com/
     1. *Markdown для текста и т.п. Панель быстрых команд (Command palette). Горячие клавиши, полезные для разработчика возможности.*
@@ -19,7 +20,6 @@
     4. Минималистичная онлайн-IDE
        - с отладчиком (может быть недоступен в РФ): [onlinegdb.com](https://www.onlinegdb.com/)
        - без отладчика: [codechef.com/ide](https://www.codechef.com/ide)
-    1. [CodeBlocks](https://www.codeblocks.org/). Версия с `mingw` в названии, например [codeblocks-25.03mingw-setup.exe](https://sourceforge.net/projects/codeblocks/files/Binaries/25.03/Windows/codeblocks-25.03mingw-setup.exe/download) уже содержит в себе компилятор.
 3. [Пример минимальной программы](../studbook/examples.md#hello-world)
   - Структура программы: главная функция, где объявлять переменные, где писать операторы, как подключать модули.
   - Комментарии. Многострочные и однострочные.
