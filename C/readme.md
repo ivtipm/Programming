@@ -36,6 +36,7 @@ _Темы для самостоятельного изучения отмече�
        - с отладчиком (может быть недоступен в РФ): [onlinegdb.com](https://www.onlinegdb.com/)
        - без отладчика: [codechef.com/ide](https://www.codechef.com/ide)
     1. [CodeBlocks](https://www.codeblocks.org/). Версия с `mingw` в названии, например [codeblocks-25.03mingw-setup.exe](https://sourceforge.net/projects/codeblocks/files/Binaries/25.03/Windows/codeblocks-25.03mingw-setup.exe/download) уже содержит в себе компилятор.
+        - [Среда разработки Code::Blocks: проекты и настройки](studbook/130_codeblocks.md)
 3. [Пример минимальной программы](studbook/examples.md#hello-world)
     - Структура программы: главная функция, где объявлять переменные, где писать операторы, как подключать модули.
     - Комментарии. Многострочные и однострочные.
@@ -251,6 +252,7 @@ _Темы для самостоятельного изучения отмече�
 - [100 — Компиляция из командной строки](studbook/100_compile.md)
 - [110 — Компиляция, запуск и отладка в Zed](studbook/110_compile_run_debug_in_zed.md)
 - [120 — Локаль и кодировка символов](studbook/120_locale_encoding.md)
+- [130 — Среда разработки Code::Blocks: проекты и настройки](studbook/130_codeblocks.md)
 - [510 — Строки и кодировки: ASCII, Unicode, UTF-8](studbook/510_strings_encoding.md)
 - [200 — Таблица типов данных](studbook/200_data_types_table.md)
 - [700 — Модульное программирование](studbook/700_modules.md)

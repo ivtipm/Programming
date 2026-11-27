@@ -4,6 +4,7 @@
 1. Язык С. Характеристика языка. [c_language.excalidraw](../c_language.excalidraw) [c_language.excalidraw.png](../c_language.excalidraw.png)
 2. Понятие среды разработки (IDE) и её основные компоненты. Панели. Запуск и сборка. Режимы запуска и сборки.
     1. [CodeBlocks](https://www.codeblocks.org/). Версия с `mingw` в названии, например [codeblocks-25.03mingw-setup.exe](https://sourceforge.net/projects/codeblocks/files/Binaries/25.03/Windows/codeblocks-25.03mingw-setup.exe/download) уже содержит в себе компилятор.
+        - [Среда разработки Code::Blocks: проекты и настройки](../studbook/130_codeblocks.md)
     1. VS Code. Расширение: C\C++ Extension pack. Терминал.\
     Скачать: https://code.visualstudio.com/
     1. *Markdown для текста и т.п. Панель быстрых команд (Command palette). Горячие клавиши, полезные для разработчика возможности.*
@@ -218,6 +219,7 @@
 - [100 — Компиляция из командной строки](../studbook/100_compile.md)
 - [110 — Компиляция, запуск и отладка в Zed](../studbook/110_compile_run_debug_in_zed.md)
 - [120 — Локаль и кодировка символов](../studbook/120_locale_encoding.md)
+- [130 — Среда разработки Code::Blocks: проекты и настройки](../studbook/130_codeblocks.md)
 - [510 — Строки и кодировки: ASCII, Unicode, UTF-8](../studbook/510_strings_encoding.md)
 - [200 — Таблица типов данных](../studbook/200_data_types_table.md)
 - [700 — Модульное программирование](../studbook/700_modules.md)
